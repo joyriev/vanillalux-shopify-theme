@@ -1,0 +1,310 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div
+  id="{{ section.id }}"
+  class="section-{{ section.id }}-padding"
+  style="background-color: {{ section.settings.background_color }}">
+  <div class="page-width">
+    <h2 class="text-center text-2xl md:text-4xl font-semibold mb-6 mt-0">{{ section.settings.heading }}</h2>
+    <div class="flex justify-center border-0 border-b border-b-gray-100 border-solid [&>.active]:[border-bottom:3px_solid_#22613A]">
+      {% for block in section.blocks %}
+        <button class="bg-transparent border-0 font-semibold text-sm md:text-lg px-4 py-3 cursor-pointer products-tab-btn">
+          {{ block.settings.tab_title }}
+        </button>
+      {% endfor %}
+    </div>
+    {% for block in section.blocks %}
+      <div class="tab-content pt-6 {% unless forloop.first %}[display:none]{% endunless %}">
+        {% assign collection = block.settings.collection %}
+        {% if collection and collection.products.size > 0 %}
+          <ul
+            id="product-grid"
+            data-id="{{ section.id }}"
+            style="display: flex !important;"
+            class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+            <li
+              class="grid__item scroll-trigger animate--slide-in"
+              data-cascade=""
+              style="--animation-order: 1;">
+              <div class="card-wrapper product-card-wrapper underline-links-hover">
+                <div class="
+         card card--standard
+         card--media
+         bg-white rounded-lg px-4 pt-4
+         " style="--ratio-percent: 100%;">
+                  <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
+                    <div class="card__media">
+                      <div class="media media--transparent media--hover-effect">
+                        <img
+                          src="https://cdn.shopify.com/s/files/1/0086/7932/5753/files/bundle-image.png?v=1755495968"
+                          alt="Buy 2 Get 1 Free"
+                          class="motion-reduce"
+                          width="1200"
+                          height="1200">
+                      </div>
+                    </div>
+                    <div class="card__content">
+                      <div class="card__information">
+                        <h3 class="card__heading">
+                          <a
+                            href="https://tryscent.co/pages/build-your-bundle"
+                            id="StandardCardNoMediaLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374"
+                            class="full-unstyled-link text-base"
+                            aria-labelledby="StandardCardNoMediaLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374 NoMediaStandardBadge-template--17957298241606__homepage_products_tab_RwziwE-7892877410374">
+                            Buy 2 Get 1 FREE
+                          </a>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <div>
+                        <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
+                          Most Popular
+                        </div>
+                      </div>
+                      <div
+                        class="rating"
+                        role="img"
+                        aria-label="4.74 out of 5.0 stars">
+                        <img
+                          src="/cdn/shop/t/35/assets/rating-stars.svg?v=134568026622208682831753800129"
+                          alt="*****"
+                          height="13"
+                          width="66">
+                      </div>
+                      <p class="rating-text caption">
+                        <span aria-hidden="true">4.74 /           
+                  5.0</span>
+                      </p>
+                      <p class="rating-count caption">
+                        <span aria-hidden="true">(324)</span>
+                        <span class="visually-hidden">324           
+                  total reviews</span>
+                      </p>
+                      <h3 class="card__heading h5" id="title-template--17957298241606__homepage_products_tab_RwziwE-7892877410374">
+                        <a
+                          href="https://tryscent.co/pages/build-your-bundle"
+                          id="CardLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374"
+                          class="full-unstyled-link text-base md:text-lg font-semibold !no-underline hover:opacity-75 !leading-tight tracking-normal"
+                          aria-labelledby="CardLink-template--17957298241606__homepage_products_tab_RwziwE-7892877410374 Badge-template--17957298241606__homepage_products_tab_RwziwE-7892877410374">
+                          <div class="text-gray-500 text-base leading-none">
+                            Bundle Set
+                          </div>
+                          <div class="line-clamp-1">
+                            Buy 2 Get 1 FREE
+                          </div>
+                          <img
+                            class="absolute right-4 bottom-4 cursor-pointer"
+                            src="/cdn/shop/t/35/assets/plus-solid.svg?v=120613118813290881911753873315"
+                            alt="+"
+                            width="32"
+                            height="32">
+                        </a>
+                      </h3>
+                      <div class="card-information">
+                        <span class="caption-large light"></span>
+                        <div class="pr-10">
+                          <div class="font-bold tracking-normal text-lg">
+                            {% comment %} <span class="price_to_modify">$55.99</span>
+                            <span class="line-through text-[#c8202f] font-normal price_to_modify">
+                              $83.99
+                            </span> {% endcomment %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__badge top right">
+                      <span id="Badge-template--17957298241606__homepage_products_tab_RwziwE-7892877410374" class="badge badge--bottom-left color-scheme-4">36% OFF</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {% assign skip_card_product_styles = false %}
+            {%- for product in collection.products limit: 7 -%}
+              {% assign lazy_load = false %}
+              {%- if forloop.index > 2 -%}
+                {%- assign lazy_load = true -%}
+              {%- endif -%}
+              <li
+                class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+                {% endif %}>
+                {% render 'card-product'
+                  , card_product: product
+                  , media_aspect_ratio: section.settings.image_ratio
+                  , image_shape: section.settings.image_shape
+                  , show_secondary_image: section.settings.show_secondary_image
+                  , show_vendor: section.settings.show_vendor
+                  , show_rating: true
+                  , lazy_load: lazy_load
+                  , skip_styles: skip_card_product_styles
+                  , quick_add: section.settings.quick_add
+                  , section_id: section.id
+                %}
+              </li>
+              {%- assign skip_card_product_styles = true -%}
+            {%- endfor -%}
+          </ul>
+        {% else %}
+          <p class="text-gray-500">No products found in this collection.</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+    {% comment %} Tabs CTA button {% endcomment %}
+
+    <div class="flex flex-col md:flex-row md:justify-center md:items-center gap-5 mt-14">
+      <img
+        class="w-full rounded-xl md:max-w-[400px] h-auto "
+        src={{section.settings.explore_image | image_url }}
+        alt=""
+        height="{{ section.settings.explore_image.height }}"
+        width="{{ section.settings.explore_image.width }}">
+
+      <div class="flex justify-between items-center md:items-start md:flex-col gap-4">
+        <div>
+          <h3 class="text-base md:text-2xl font-semibold m-0 tracking-tight">{{ section.settings.explore_heading }}</h3>
+          <p class="m-0 text-sm md:text-lg font-medium tracking-tight">{{ section.settings.explore_subheading }}</p>
+        </div>
+        <div>
+          <a
+            href="{{ section.settings.button_link }}"
+            class="no-underline text-white font-semibold px-6 md:px-10 py-3 bg-[#137c44] hover:bg-[#02491c] rounded-full tracking-normal md:tracking-wider text-lg transition-colors uppercase inline-block"
+            aria-label="{{ section.settings.button_text }}">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('#{{ section.id }} .products-tab-btn');
+        const tabContents = document.querySelectorAll('#{{ section.id }} .tab-content');
+
+        buttons.forEach((button, index) => {
+            // Add click event listener to each button
+            button.addEventListener('click', (event) => {
+                // Hide all tab contents
+                tabContents.forEach(content => content.style.display = 'none');
+                buttons.forEach(btn => btn.classList.remove('active'));
+                
+                // Show the clicked tab's content
+                button.classList.add('active');
+                tabContents[index].style.display = 'block';
+            });
+        });
+    
+        // Show the first tab content by default
+        if (tabContents.length > 0) {
+            buttons[0].classList.add('active');
+            tabContents[0].style.display = 'block';
+        }
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Homepage Products Tab",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#fcfbf9"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Selected for you"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View All"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "/collections/all"
+      }, {
+        "type": "image_picker",
+        "id": "explore_image",
+        "label": "Explore Image"
+      }, {
+        "type": "text",
+        "id": "explore_heading",
+        "label": "Explore Heading",
+        "default": "Explore More"
+      }, {
+        "type": "text",
+        "id": "explore_subheading",
+        "label": "Explore Subheading",
+        "default": "Discover our latest collections"
+      }, {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "text",
+            "id": "tab_title",
+            "label": "Tab Title"
+          }, {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Products Tab"
+      }
+    ]
+  }
+{% endschema %}
