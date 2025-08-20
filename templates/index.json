@@ -134,18 +134,21 @@
         "review_LM3NkM": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/eloquent_1.png",
             "review_content": "“Everything I’ve ordered smells amazing and the scent really lasts!”"
           }
         },
         "review_Lgzbga": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/vogue.png",
             "review_content": "“A lovely pick for holiday vibes or a quick, charming gift.”"
           }
         },
         "review_m4Wt3r": {
           "type": "review",
           "settings": {
+            "review_image": "shopify://shop_images/cosmopolitan_1.png",
             "review_content": "“This feels so authentic, we couldn’t tell it’s not the original.”"
           }
         }
