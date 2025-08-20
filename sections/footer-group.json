@@ -27,7 +27,7 @@
         "image_aEwGgP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/catsoft-logo.svg",
+            "image": "shopify://shop_images/Vanillalux_logo_white.svg",
             "image_width": 120,
             "alignment": ""
           }
@@ -43,7 +43,7 @@
           "type": "link_list",
           "settings": {
             "heading": "Information",
-            "menu": "information"
+            "menu": ""
           }
         },
         "text_FEF8Xw": {
