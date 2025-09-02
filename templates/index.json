@@ -201,6 +201,7 @@
         "heading": "Selected for you",
         "button_text": "Explore All",
         "button_link": "shopify://collections/all",
+        "explore_image": "shopify://shop_images/explore-all-image.webp",
         "explore_heading": "All Scents, Well Selected",
         "explore_subheading": "200+ scents to choose from",
         "padding_top": 52,
@@ -259,18 +260,21 @@
         "perk_wnTHMw": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/sandwatch.svg",
             "text": "Lasts 12+ Hours"
           }
         },
         "perk_VkFF3N": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/heart.svg",
             "text": "loved by 10,000+"
           }
         },
         "perk_cG7y8p": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/sheild-star.svg",
             "text": "60 day satisfaction guarantee"
           }
         }
@@ -282,6 +286,7 @@
       ],
       "name": "Special Offer",
       "settings": {
+        "offer_image": "shopify://shop_images/special-offer-two-bottle.webp",
         "offer_text": "Special Offer",
         "offer_title": "Buy More, Get More Free",
         "offer_description": "Choose your perfect bundle and receive matching free bottles in the same size: 30ml, 50ml, or 100ml.",
@@ -298,6 +303,7 @@
         "collection_t6NHM7": {
           "type": "collection",
           "settings": {
+            "image": "shopify://shop_images/explore.webp",
             "heading": "Scents For Women",
             "subheading": "100+ scents to choose from",
             "button_text": "Explore",
@@ -308,6 +314,7 @@
         "collection_zqtLKY": {
           "type": "collection",
           "settings": {
+            "image": "shopify://shop_images/scent-for-men-explore-img.webp",
             "heading": "Scents For Men",
             "subheading": "100+ scents to choose from",
             "button_text": "Explore",
@@ -394,18 +401,21 @@
         "perk_HrfwXR": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/sandwatch.svg",
             "text": "Lasts 12+ Hours"
           }
         },
         "perk_d4dqHJ": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/heart.svg",
             "text": "loved by 10,000+"
           }
         },
         "perk_9CajQF": {
           "type": "perk",
           "settings": {
+            "icon": "shopify://shop_images/sheild-star.svg",
             "text": "60 day satisfaction guarantee"
           }
         }
@@ -417,6 +427,7 @@
       ],
       "name": "Special Offer",
       "settings": {
+        "offer_image": "shopify://shop_images/makes-different-img.webp",
         "offer_text": "Special Offer",
         "offer_title": "Your Next Signature Scent, Trial-Sized.",
         "offer_description": "Not ready to commit? Our travel-size perfumes let you explore luxe fragrances one spritz at a time.Perfect for pockets, purses, and perfume commitment issues.",
@@ -477,6 +488,7 @@
       "settings": {
         "background_color": "#ffffff",
         "makes_diferent_title": "What Makes Vanillalux Different? Everything That Matters.",
+        "makes-different-image": "shopify://shop_images/makes-different-img.webp",
         "makes-different-btn-text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "makes-different-btn-link": "",
         "padding_top": 72,
