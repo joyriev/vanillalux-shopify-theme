@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
-       <script>
+    <script>
       /* >> Heatmap.com :: Snippet << */(function (h,e,a,t,m,ap) { (h._heatmap_paq = []).push([ 'setTrackerUrl', (h.heatUrl = e) + a]); h.hErrorLogs=h.hErrorLogs || []; ap=t.createElement('script');  ap.src=h.heatUrl+'preprocessor.min.js?sid='+m;  ap.defer=true; t.head.appendChild(ap); ['error', 'unhandledrejection'].forEach(function (ty) {     h.addEventListener(ty, function (et) { h.hErrorLogs.push({ type: ty, event: et }); }); });})(window,'https://dashboard.heatmap.com/','heatmap.php',document,3912);
     </script>
     {% render 'pandectes-rules' %}
@@ -356,6 +356,10 @@ body {
       href="{{ 'tailwind-compiled.css' | asset_url }}"
       media="all">
 
+      {% comment %} Load Swiper Assets {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script defer="" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
@@ -451,7 +455,6 @@ body {
         document.head.appendChild(script);
       })();
     </script>
-
 
     {% comment %} Convert the non product currencies local users exchange rate {% endcomment %}
     <script>
