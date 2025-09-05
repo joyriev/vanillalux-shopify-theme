@@ -1,11 +1,6 @@
 {% liquid
   assign product_form_id = 'product-form-' | append: section.id
   assign selected_variant = product.selected_or_first_available_variant
-  for variant in product.variants
-    if variant.title == '50ML'
-      assign selected_variant = variant
-    endif
-  endfor
 %}
 
 <style>
@@ -38,7 +33,7 @@
       type="button"
       class="variant-button flex flex-col items-center gap-1 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
       @click="$store.bundleBuilder.selectedVariant = '{{ variant.title }}'; $store.bundleBuilder.variantId = '{{ variant.id }}'"
-      :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-green-700' : ''">
+      :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-red-500' : ''">
       {% if variant.image %}
         <div class="size-12 mx-auto">
           <img
@@ -86,12 +81,12 @@
       type="submit"
       name="add"
       value="1"
-      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-[#22613a] hover:bg-[#368856] transition-colors shadow-xl tracking-normal button--full-width button--primary"
+      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-red-500 hover:bg-red-400 transition-colors shadow-xl tracking-normal button--full-width button--primary"
       aria-label="Add to cart">
       <span>Add to cart</span>
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
-          class="inline-block text-lg bg-[#1E5834] px-3 rounded"
+          class="inline-block text-lg bg-red-600 px-3 rounded"
           id="product-price"
           role="status"
           {{ block.shopify_attributes }}>
@@ -109,8 +104,10 @@
 {% comment %} Bundle builder {% endcomment %}
 <div x-data>
   <div x-show="$store.bundleBuilder.selectedVariant !== '7.5ML'" class="border border-solid border-gray-200 bg-white rounded-lg p-6 mb-6">
-    <h2 class="text-2xl font-bold text-gray-900 my-0 text-center tracking-normal">Buy 2 Get 1 FREE</h2>
-    <p class="text-lg text-green-700 font-semibold mt-0 mb-4 text-center tracking-normal">Build your bundle and get one scent for FREE!</p>
+    <h2 class="text-xl md:text-2xl text-gray-900 my-0 text-center tracking-normal font-semibold flex items-center justify-center gap-2">Buy 2 Get 1 FREE
+      <span class="bg-green-700 text-white px-2 rounded font-bold">Save 33%</span>
+    </h2>
+    <p class="text-lg text-gray-500 font-semibold mt-0 mb-4 text-center tracking-normal">Build your bundle and get one scent for FREE!</p>
     <div class="grid grid-cols-3 gap-4">
       <template x-for="(product, index) in $store.bundleBuilder.selectedProducts" :key="product.id">
         <div class="text-center relative">
@@ -140,7 +137,7 @@
       <template x-for="i in (3 - $store.bundleBuilder.selectedProducts.length)" :key="i">
         <div class="text-center">
           <div class="border-2 border-dashed bg-white border-gray-300 rounded-lg grid place-items-center w-full aspect-square">
-            <button @click="$store.bundleBuilder.showModal = true" class="w-16 h-16 border-0 bg-green-700 text-white rounded-lg text-2xl hover:bg-green-700 transition-colors cursor-pointer">
+            <button @click="$store.bundleBuilder.showModal = true" class="w-16 h-16 border-0 bg-red-500 text-white rounded-lg text-2xl hover:bg-red-400 transition-colors cursor-pointer">
               <div class="svg-wrapper">
                 {{- 'icon-plus.svg' | inline_asset_content -}}
               </div>
