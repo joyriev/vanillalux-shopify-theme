@@ -150,10 +150,12 @@
   </div>
 </div>
 
-{% assign bundle_collection = collections['smells-like'] %}
-{% unless bundle_collection %}
-  {% assign bundle_collection = collections.first %}
-{% endunless %}
+{% liquid
+  assign bundle_collection = collections['all']
+  unless bundle_collection
+    assign bundle_collection = collections.first
+  endunless
+%}
 
 <script>
   document.addEventListener('alpine:init', function() {
