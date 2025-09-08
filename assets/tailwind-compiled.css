@@ -1331,6 +1331,10 @@
     fill: #15803d
 }
 
+.fill-saffron {
+    fill: #e9735e
+}
+
 .object-contain {
     -o-object-fit: contain;
        object-fit: contain
