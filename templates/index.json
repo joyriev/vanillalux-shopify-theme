@@ -322,7 +322,7 @@
         "collection_t6NHM7": {
           "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/explore.webp",
+            "image": "shopify://shop_images/model1.png",
             "heading": "Scents For Women",
             "subheading": "100+ scents to choose from",
             "button_text": "Explore",
@@ -333,7 +333,7 @@
         "collection_zqtLKY": {
           "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/scent-for-men-explore-img.webp",
+            "image": "shopify://shop_images/model2.png",
             "heading": "Scents For Men",
             "subheading": "100+ scents to choose from",
             "button_text": "Explore",
@@ -507,7 +507,7 @@
       "settings": {
         "background_color": "#ffffff",
         "makes_diferent_title": "What Makes Dupe Store Different? Everything That Matters.",
-        "makes-different-image": "shopify://shop_images/makes-different-img.webp",
+        "makes-different-image": "shopify://shop_images/makesdifferent.png",
         "makes-different-btn-text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "makes-different-btn-link": "",
         "padding_top": 72,
