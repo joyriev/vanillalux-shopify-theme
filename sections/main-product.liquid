@@ -101,7 +101,7 @@
                   </svg>
                   <span class="price_to_modify inline-block">${{ block.settings.number }}</span>
                   <span class="cheaper_than_text">cheaper than</span>
-                  <span>{{ product.metafields.custom.nuta | remove: 'Inspired by: ' }}</span>
+                  <span>{{ product.metafields.custom.nuta | remove: 'Inspired by: ' |  remove: 'Inspired By: '  }}</span>
                 </div>
               {%- when 'mobile_gallery' -%}
                 <div class="md:hidden">
