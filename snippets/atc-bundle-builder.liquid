@@ -21,7 +21,7 @@
 </div>
 
 <div
-  class="grid grid-cols-4 gap-3"
+  class="grid grid-cols-3 gap-3"
   id="variant-selector"
   x-data>
   {% for variant in product.variants %}
@@ -33,7 +33,7 @@
       type="button"
       class="variant-button flex flex-col items-center gap-1 rounded-lg p-2 pt-3 bg-white border-2 border-solid border-gray-200 cursor-pointer font-['Figtree'] relative"
       @click="$store.bundleBuilder.selectedVariant = '{{ variant.title }}'; $store.bundleBuilder.variantId = '{{ variant.id }}'"
-      :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-red-500' : ''">
+      :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-saffron' : ''">
       {% if variant.image %}
         <div class="size-12 mx-auto">
           <img
@@ -48,10 +48,10 @@
       <span class="text-sm font-semibold">{{ variant.title }}</span>
       <span class="text-xs text-gray-600">{{ cart.currency.symbol }}{{ per_ml }} Per Spray</span>
       {% if variant.title == '50ML' %}
-        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#c8202f] px-2 py-0.5">Popular</span>
+        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-red-600 px-2 py-0.5">Popular</span>
       {% endif %}
       {% if variant.title == '100ML' %}
-        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-[#22613a] px-2 py-0.5">Bestseller</span>
+        <span class="text-xs italic text-white rounded absolute -top-2.5 left-1/2 [transform:translateX(-50%)] bg-green-700 px-2 py-0.5">Bestseller</span>
       {% endif %}
     </button>
   {% endfor %}
@@ -81,12 +81,12 @@
       type="submit"
       name="add"
       value="1"
-      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-red-500 hover:bg-red-400 transition-colors shadow-xl tracking-normal button--full-width button--primary"
+      class="atc-button cta_product_from_submit_btn flex flex-wrap items-center !mb-0 text-2xl !pb-3 !pt-3 rounded-lg button bg-midnight hover:bg-skyblue hover:text-midnight transition-colors shadow-xl tracking-normal button--full-width button--primary"
       aria-label="Add to cart">
       <span>Add to cart</span>
       <div class="ml-2 pl-2 border-0 border-l flex items-center border-solid border-gray-200/20">
         <div
-          class="inline-block text-lg bg-red-600 px-3 rounded"
+          class="inline-block text-lg bg-black/10 px-3 rounded"
           id="product-price"
           role="status"
           {{ block.shopify_attributes }}>
@@ -137,7 +137,7 @@
       <template x-for="i in (3 - $store.bundleBuilder.selectedProducts.length)" :key="i">
         <div class="text-center">
           <div class="border-2 border-dashed bg-white border-gray-300 rounded-lg grid place-items-center w-full aspect-square">
-            <button @click="$store.bundleBuilder.showModal = true" class="w-16 h-16 border-0 bg-red-500 text-white rounded-lg text-2xl hover:bg-red-400 transition-colors cursor-pointer">
+            <button @click="$store.bundleBuilder.showModal = true" class="w-16 h-16 border-0 bg-saffron text-white rounded-lg text-2xl hover:bg-red-400 transition-colors cursor-pointer">
               <div class="svg-wrapper">
                 {{- 'icon-plus.svg' | inline_asset_content -}}
               </div>

@@ -4,7 +4,7 @@
   class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
   x-cloak>
   <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 h-[90vh] flex flex-col relative" @click.away="$store.bundleBuilder.showModal = false">
-    <button @click="$store.bundleBuilder.showModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center hover:bg-red-400 border-0 text-3xl cursor-pointer transition">
+    <button @click="$store.bundleBuilder.showModal = false" class="absolute -top-2 -right-2 w-8 h-8 bg-midnight text-white rounded-full flex items-center justify-center hover:bg-saffron border-0 text-3xl cursor-pointer transition">
       <span class="[rotate:-45deg] svg-wrapper">
         {{- 'icon-plus.svg' | inline_asset_content -}}
       </span>
@@ -18,20 +18,20 @@
         <div class="flex space-x-1 mb-4">
           <button
             @click="$store.bundleBuilder.activeCategory = 'All'"
-            :class="$store.bundleBuilder.activeCategory === 'All' ? 'border-2 border-red-500 bg-red-50' : 'bg-white border-gray-200'"
+            :class="$store.bundleBuilder.activeCategory === 'All' ? 'border-2 border-saffron bg-red-50' : 'bg-white border-gray-200'"
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">All</button>
           <button
             @click="$store.bundleBuilder.activeCategory = 'Man'"
-            :class="$store.bundleBuilder.activeCategory === 'Man' ? 'border-2 border-red-500 bg-red-50' : 'bg-white border-gray-200'"
+            :class="$store.bundleBuilder.activeCategory === 'Man' ? 'border-2 border-saffron bg-red-50' : 'bg-white border-gray-200'"
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Men's</button>
           <button
             @click="$store.bundleBuilder.activeCategory = 'Woman'"
-            :class="$store.bundleBuilder.activeCategory === 'Woman' ? 'border-2 border-red-500 bg-red-50' : 'bg-white border-gray-200'"
+            :class="$store.bundleBuilder.activeCategory === 'Woman' ? 'border-2 border-saffron bg-red-50' : 'bg-white border-gray-200'"
             class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer">Women's</button>
         </div>
         <!-- Search -->
         <div class="grid grid-cols-2 gap-4">
-          <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-red-500 block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+          <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-saffron block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
             <option selected value="">Shop By Brand</option>
             <option value="Creed">Creed</option>
             <option value="Dior">Dior</option>
@@ -62,7 +62,7 @@
               type="text"
               x-model="$store.bundleBuilder.searchText"
               placeholder="Find your perfume"
-              class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-red-500 focus:outline-none focus:ring-0">
+              class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-saffron focus:outline-none focus:ring-0">
             <span class="absolute top-2.5 left-2.5 svg-wrapper">
               {{- 'icon-search.svg' | inline_asset_content -}}
             </span>
@@ -124,7 +124,7 @@
                 <button
                   @click="$store.bundleBuilder.addRemoveProduct(product)"
                   :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
-                  :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-red-700 hover:bg-red-800' : 'bg-green-700 hover:bg-green-800'"
+                  :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-saffron' : 'bg-midnight'"
                   class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                   <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
                 </button>
