@@ -88,9 +88,8 @@
       "blocks": {
         "label_idFnra": {
           "type": "label",
-          "disabled": true,
           "settings": {
-            "label": "FREE SHIPPING ON ORDERS ABOVE $50"
+            "label": "FREE SHIPPING ON ALL ORDERS"
           }
         },
         "label_MXGigr": {
@@ -116,6 +115,18 @@
           "settings": {
             "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
           }
+        },
+        "label_LqcxhV": {
+          "type": "label",
+          "settings": {
+            "label": "25% EDP"
+          }
+        },
+        "label_nnU3Xa": {
+          "type": "label",
+          "settings": {
+            "label": "Only 50 Hand-Crafted at a Time"
+          }
         }
       },
       "block_order": [
@@ -123,7 +134,9 @@
         "label_MXGigr",
         "label_iFULPM",
         "label_8KQqAa",
-        "label_LMktzF"
+        "label_LMktzF",
+        "label_LqcxhV",
+        "label_nnU3Xa"
       ],
       "name": "Marquee Labels",
       "settings": {}
