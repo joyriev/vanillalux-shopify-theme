@@ -299,6 +299,7 @@
       ],
       "name": "Special Offer",
       "settings": {
+        "background_image": "shopify://shop_images/Frame_349.webp",
         "offer_image": "shopify://shop_images/special-offer-two-bottle.webp",
         "offer_text": "Special Offer",
         "offer_title": "Buy More, Get More Free",
