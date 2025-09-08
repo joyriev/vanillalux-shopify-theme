@@ -441,6 +441,7 @@
       ],
       "name": "Special Offer",
       "settings": {
+        "background_image": "shopify://shop_images/special-offer-two-bg.png",
         "offer_image": "shopify://shop_images/makes-different-img.webp",
         "offer_text": "Special Offer",
         "offer_title": "Your Next Signature Scent, Trial-Sized.",
