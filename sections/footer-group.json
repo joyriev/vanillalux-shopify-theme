@@ -26,8 +26,9 @@
       "blocks": {
         "image_aEwGgP": {
           "type": "image",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Vanillalux_logo.svg",
+            "image": "shopify://shop_images/dupestorefavicon.svg",
             "image_width": 120,
             "alignment": ""
           }
