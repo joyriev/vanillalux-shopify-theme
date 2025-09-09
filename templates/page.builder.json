@@ -1,1 +1,1 @@
-{"sections":{"bundle_builder":{"type":"custom-liquid","settings":{"custom_liquid":"{% render 'builder' %}","color_scheme":"","padding_top":0,"padding_bottom":52}}},"order":["bundle_builder"]}
+{"sections":{"bundle_builder":{"type":"custom-liquid","settings":{"custom_liquid":"{% render 'builder-v2' %}","color_scheme":"","padding_top":0,"padding_bottom":52}}},"order":["bundle_builder"]}
