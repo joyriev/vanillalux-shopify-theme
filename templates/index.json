@@ -305,7 +305,7 @@
       "name": "Special Offer",
       "settings": {
         "background_image": "shopify://shop_images/Frame_349.webp",
-        "offer_image": "shopify://shop_images/special-offer-two-bottle.webp",
+        "offer_image": "shopify://shop_images/special_offer_2.png",
         "offer_text": "Special Offer",
         "offer_title": "Buy More, Get More Free",
         "offer_description": "Choose your perfect bundle and receive matching free bottles in the same size: 30ml, 50ml, or 100ml.",
