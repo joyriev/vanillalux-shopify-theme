@@ -53,14 +53,64 @@
         </button>
       {% endfor %}
     </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 pt-4 md:pt-6">
+      <button
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        data-bundle-type="2+1"
+        @click="$store.bundleBuilder.selectedBundleType = '2+1'"
+        :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-saffron' : ''">
+        <div class="p-4">
+          <h3 class="bundle-type-desc my-0 font-semibold">Buy 2, Get 1 Free</h3>
+          <p class="my-2 text-2xl font-bold text-saffron">Tk 5600.00</p>
+          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+        </div>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+      </button>
+      <button
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        data-bundle-type="3+2"
+        @click="$store.bundleBuilder.selectedBundleType = '3+2'"
+        :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-saffron' : ''">
+        <div class="p-4">
+          <h3 class="bundle-type-desc my-0 font-semibold">Buy 3, Get 2 Free</h3>
+          <p class="my-2 text-2xl font-bold text-saffron">Tk 5600.00</p>
+          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+        </div>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+      </button>
+      <button
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        data-bundle-type="4+1"
+        @click="$store.bundleBuilder.selectedBundleType = '5+4'"
+        :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-saffron' : ''">
+        <div class="p-4">
+          <h3 class="bundle-type-desc my-0 font-semibold">Buy 5, Get 4 Free</h3>
+          <p class="my-2 text-2xl font-bold text-saffron">Tk 5600.00</p>
+          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+        </div>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+      </button>
+      <button
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
+        data-bundle-type="5+1"
+        @click="$store.bundleBuilder.selectedBundleType = '8+8'"
+        :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-saffron' : ''">
+        <div class="p-4">
+          <h3 class="bundle-type-desc my-0 font-semibold">Buy 8, Get 8 Free</h3>
+          <p class="my-2 text-2xl font-bold text-saffron">{{ chosen_product.price | times: 8 | money }}</p>
+          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+        </div>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+      </button>
+    </div>
   </div>
 </div>
-
 
 <script>
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
+      selectedBundleType: "2+1",
       activeCategory: "All",
       selectedBrand: "",
       searchText: "",
