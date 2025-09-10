@@ -53,7 +53,7 @@
         </button>
       {% endfor %}
     </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 pt-4 md:pt-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 py-4 md:py-6">
       <button
         class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
         data-bundle-type="2+1"
@@ -103,10 +103,126 @@
         <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
       </button>
     </div>
+    <div class="grid grid-cols-8 gap-6">
+      <div class="col-span-5">
+        <div class="mb-6">
+          <div class="flex space-x-1 mb-4">
+            <button
+              @click="$store.bundleBuilder.activeCategory = 'All'"
+              :class="$store.bundleBuilder.activeCategory === 'All' && 'border-2 border-saffron bg-red-50'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">All</button>
+            <button
+              @click="$store.bundleBuilder.activeCategory = 'Man'"
+              :class="$store.bundleBuilder.activeCategory === 'Man' && 'border-2 border-saffron bg-red-50'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Men's</button>
+            <button
+              @click="$store.bundleBuilder.activeCategory = 'Woman'"
+              :class="$store.bundleBuilder.activeCategory === 'Woman' && 'border-2 border-saffron bg-red-50'"
+              class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Women's</button>
+          </div>
+          <!-- Search -->
+          <div class="grid grid-cols-2 gap-4">
+            <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-saffron block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+              <option selected value="">Shop By Brand</option>
+              <option value="Creed">Creed</option>
+              <option value="Dior">Dior</option>
+              <option value="Maison Francis Kurkdjian">Maison Francis Kurkdjian</option>
+              <option value="Tom Ford">Tom Ford</option>
+              <option value="Chanel">Chanel</option>
+              <option value="Armani">Armani</option>
+              <option value="Louis Vuitton">Louis Vuitton</option>
+              <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+              <option value="Xerjoff">Xerjoff</option>
+              <option value="Versace">Versace</option>
+              <option value="Paco Rabanne">Paco Rabanne</option>
+              <option value="Valentino">Valentino</option>
+              <option value="YSL">YSL</option>
+              <option value="Prada">Prada</option>
+              <option value="Carolina Herrera">Carolina Herrera</option>
+              <option value="Giorgio Armani">Giorgio Armani</option>
+              <option value="Initio">Initio</option>
+              <option value="Hermes">Hermes</option>
+              <option value="Montale">Montale</option>
+              <option value="Kilian">Kilian</option>
+              <option value="Issey Miyake">Issey Miyake</option>
+              <option value="Lancôme">Lancôme</option>
+              <option value="Parfums de Marly">Parfums de Marly</option>
+            </select>
+            <div class="relative">
+              <input
+                type="text"
+                x-model="$store.bundleBuilder.searchText"
+                placeholder="Find your perfume"
+                class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-saffron focus:outline-none focus:ring-0">
+              <span class="absolute top-2.5 left-2.5 svg-wrapper">
+                {{- 'icon-search.svg' | inline_asset_content -}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
+            <template x-if="(product.tags.some(tag => tag === $store.bundleBuilder.activeCategory) || $store.bundleBuilder.activeCategory === 'All') &&
+         ($store.bundleBuilder.selectedBrand === '' || product.tags.some(tag => 
+           tag.toLowerCase().includes($store.bundleBuilder.selectedBrand.toLowerCase())
+         )) &&
+         ($store.bundleBuilder.searchText === '' || product.name.toLowerCase().includes($store.bundleBuilder.searchText.toLowerCase()))">
+              <div class="border border-solid border-gray-200 rounded-lg p-4 flex flex-col">
+                <div class="flex justify-center mb-4">
+                  <img
+                    :src="product.image"
+                    :alt="product.name"
+                    height=""
+                    width=""
+                    class="w-full h-auto object-cover rounded mr-2">
+                </div>
+                <div class="relative mt-2 flex-1">
+                  <p class="text-gray-600 text-sm absolute top-0 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
+                  <p class="text-gray-600 text-sm my-0">Smells like</p>
+                  <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
+                  <div class="flex items-center">
+                    <img
+                      src="{{ 'rating-stars.svg' | asset_url }}"
+                      alt="*****"
+                      height="13"
+                      width="66">
+                    <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                  </div>
+                  <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                </div>
+                <button
+                  @click="$store.bundleBuilder.addRemoveProduct(product)"
+                  :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
+                  :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-saffron' : 'bg-midnight'"
+                  class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                  <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
+                </button>
+              </div>
+            </template>
+          </template>
+        </div>
+      </div>
+      <div class="col-span-3"></div>
+    </div>
   </div>
 </div>
 
+{% liquid
+  assign bundle_collection = collections['all']
+  unless bundle_collection
+    assign bundle_collection = collections.first
+  endunless
+%}
+
 <script>
+  const variantsObj = {
+      {% for variant in chosen_product.variants %}
+        "{{ variant.title }}": {
+          originalPrice: "{{ variant.price | money }}",
+          compareAtPrice: "{{ variant.compare_at_price | money }}"
+        },
+      {% endfor %}
+    };
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
@@ -116,13 +232,34 @@
       searchText: "",
       addingToCart: false,
       selectedProducts: [],
-      availableProducts: [],
-      get originalPrice() {
+      availableProducts: [
+        {% for bundle_product in bundle_collection.products %}
+          {
+            id: {{ bundle_product.id }},
+            name: "{{ bundle_product.title | remove: 'Smells like...' | remove: 'Smells like ...' }}",
+            image: "{{ bundle_product.featured_image | image_url }}",
+            ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            tags: {{ bundle_product.tags | json }},
+            variants: {
+              {% for variant in bundle_product.variants %}
+                "{{ variant.title }}": {
+                  id: {{ variant.id }},
+                  originalPrice: "{{ variant.price | money }}"
+                },
+              {% endfor %}
+            }
+          },
+        {% endfor %}
+      ],
+      get getBundlePrice() {
         return variantsObj[this.selectedVariant].originalPrice;
       },
-      get compareAtPrice() {
+      get getPerBottlePrice() {
         return variantsObj[this.selectedVariant].compareAtPrice;
       },
+      get getSavingAmount() {
+        return variantsObj[this.selectedVariant].compareAtPrice - variantsObj[this.selectedVariant].originalPrice;
+      }
     });
   });
 </script>

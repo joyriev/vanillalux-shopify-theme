@@ -169,6 +169,10 @@
     grid-column: span 6 / span 6
 }
 
+.col-span-5 {
+    grid-column: span 5 / span 5
+}
+
 .\!m-0 {
     margin: 0px !important
 }
@@ -799,6 +803,14 @@
 
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr))
+}
+
+.grid-cols-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr))
+}
+
+.grid-cols-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr))
 }
 
 .grid-rows-3 {
@@ -2451,6 +2463,11 @@
     .md\:py-10 {
         padding-top: 40px;
         padding-bottom: 40px
+    }
+
+    .md\:py-6 {
+        padding-top: 24px;
+        padding-bottom: 24px
     }
 
     .md\:pb-12 {
