@@ -137,16 +137,6 @@
               <option value="Paco Rabanne">Paco Rabanne</option>
               <option value="Valentino">Valentino</option>
               <option value="YSL">YSL</option>
-              <option value="Prada">Prada</option>
-              <option value="Carolina Herrera">Carolina Herrera</option>
-              <option value="Giorgio Armani">Giorgio Armani</option>
-              <option value="Initio">Initio</option>
-              <option value="Hermes">Hermes</option>
-              <option value="Montale">Montale</option>
-              <option value="Kilian">Kilian</option>
-              <option value="Issey Miyake">Issey Miyake</option>
-              <option value="Lancôme">Lancôme</option>
-              <option value="Parfums de Marly">Parfums de Marly</option>
             </select>
             <div class="relative">
               <input
@@ -202,7 +192,29 @@
           </template>
         </div>
       </div>
-      <div class="col-span-3"></div>
+      <div class="col-span-3">
+        <div class="p-4 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
+          <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - $store.bundleBuilder.selectedProducts.length} MORE SCENT${3 - $store.bundleBuilder.selectedProducts.length > 1 ? 'S' : ''}`"></h2>
+          {% comment %} Progress {% endcomment %}
+          <div class="progress">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 50%"
+              aria-valuenow="50"
+              aria-valuemin="0"
+              aria-valuemax="100"></div>
+          </div>
+          <div class="space-y-2">
+            <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.id">
+              <div class="flex items-center justify-between">
+                <p class="text-gray-600" x-text="product.name"></p>
+                <p class="text-gray-900 font-bold" x-text="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -250,43 +262,62 @@
           },
         {% endfor %}
       ],
-      getBundlePrice(times) {
-        let currentPrice = variantsObj[this.selectedVariant].price;
-        let priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
-        if (priceMatch.includes(',')) {
-          priceMatch = priceMatch[0].replace(',', '.');
+      _parsePrice(priceStr) {
+        const match = priceStr.match(/[\d,]+\.?\d*/);
+        if (!match) return 0;
+        
+        const cleanPrice = match[0].includes(',') ? 
+          match[0].replace(',', '.') : match[0];
+        return parseFloat(cleanPrice);
+      },
+      _formatPrice(price, format = '') {
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const formattedPrice = currentPrice.replace(/\d+(\.\d{2})?/g, price.toFixed(2));
+        
+        switch(format) {
+          case 'bottle':
+            return `${formattedPrice} per bottle`;
+          case 'savings':
+            return `SAVE ${formattedPrice}`;
+          default:
+            return formattedPrice;
         }
-        const basePrice = parseFloat(priceMatch);
+      },
+      getBundlePrice(times) {
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const basePrice = this._parsePrice(currentPrice);
         const finalPrice = basePrice * times;
-
-        const finalPriceString = currentPrice.replace(/\d+(\.\d{2})?/g, finalPrice.toFixed(2));
-        return finalPriceString;
+        return this._formatPrice(finalPrice);
       },
       getPerBottlePrice(times, total) {
-        let currentPrice = variantsObj[this.selectedVariant].price;
-        let priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
-        if (priceMatch.includes(',')) {
-          priceMatch = priceMatch[0].replace(',', '.');
-        }
-        const basePrice = parseFloat(priceMatch);
-        const finalPrice = basePrice * times;
-        const perBottlePrice = finalPrice / total;
-
-        const finalPriceString = currentPrice.replace(/\d+(\.\d{2})?/g, perBottlePrice.toFixed(2));
-        return finalPriceString + ' per bottle';
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const basePrice = this._parsePrice(currentPrice);
+        const finalPrice = (basePrice * times) / total;
+        return this._formatPrice(finalPrice, 'bottle');
       },
       getSavings(freeCount) {
-        let currentPrice = variantsObj[this.selectedVariant].price;
-        let priceMatch = currentPrice.match(/\d+(\.\d{2})?/g);
-        if (priceMatch.includes(',')) {
-          priceMatch = priceMatch[0].replace(',', '.');
-        }
-        const basePrice = parseFloat(priceMatch);
+        const currentPrice = variantsObj[this.selectedVariant].price;
+        const basePrice = this._parsePrice(currentPrice);
         const savings = basePrice * freeCount;
-
-        const savingsString = currentPrice.replace(/\d+(\.\d{2})?/g, savings.toFixed(2));
-        return `SAVE ${savingsString}`;
-      }
+        return this._formatPrice(savings, 'savings');
+      },
+      addRemoveProduct(product) {
+        if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
+          this.selectedProducts.push(product);
+          if (this.selectedProducts.length === 3) {
+            // this.showModal = false;
+            this.addBundleToCart();
+          }
+        } else {
+          this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
+        }
+      },
+      removeProduct(index) {
+        this.selectedProducts.splice(index, 1);
+      },
+      isProductSelected(productId) {
+        return this.selectedProducts.some(product => product.id === productId);
+      },
     });
   });
 </script>
