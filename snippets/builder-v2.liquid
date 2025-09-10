@@ -61,10 +61,10 @@
         :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-saffron' : ''">
         <div class="p-4">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 2, Get 1 Free</h3>
-          <p class="my-2 text-2xl font-bold text-saffron">Tk 5600.00</p>
-          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+          <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(2)">00.00</p>
+          <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(2, 3)">00.00</p>
         </div>
-        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(1)">SAVE 00.00</p>
       </button>
       <button
         class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
@@ -73,10 +73,10 @@
         :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-saffron' : ''">
         <div class="p-4">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 3, Get 2 Free</h3>
-          <p class="my-2 text-2xl font-bold text-saffron">Tk 5600.00</p>
-          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+          <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(3)">00.00</p>
+          <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(3, 5)">00.00</p>
         </div>
-        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(2)">SAVE 00.00</p>
       </button>
       <button
         class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
@@ -85,10 +85,10 @@
         :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-saffron' : ''">
         <div class="p-4">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 5, Get 4 Free</h3>
-          <p class="my-2 text-2xl font-bold text-saffron">Tk 5600.00</p>
-          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+          <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(5)">00.00</p>
+          <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(5, 9)">00.00</p>
         </div>
-        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(4)">SAVE 00.00</p>
       </button>
       <button
         class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
@@ -97,10 +97,10 @@
         :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-saffron' : ''">
         <div class="p-4">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 8, Get 8 Free</h3>
-          <p class="my-2 text-2xl font-bold text-saffron">{{ chosen_product.price | times: 8 | money }}</p>
-          <p class="my-0 text-midnight text-lg">Tk 1866.67 per bottle</p>
+          <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(8)">00.00</p>
+          <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(8, 16)">00.00</p>
         </div>
-        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]">SAVE Tk 2800.00</p>
+        <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(8)">SAVE 00.00</p>
       </button>
     </div>
     <div class="grid grid-cols-8 gap-6">
@@ -218,8 +218,7 @@
   const variantsObj = {
       {% for variant in chosen_product.variants %}
         "{{ variant.title }}": {
-          originalPrice: "{{ variant.price | money }}",
-          compareAtPrice: "{{ variant.compare_at_price | money }}"
+          price: "{{ variant.price | money }}"
         },
       {% endfor %}
     };
@@ -251,14 +250,42 @@
           },
         {% endfor %}
       ],
-      get getBundlePrice() {
-        return variantsObj[this.selectedVariant].originalPrice;
+      getBundlePrice(times) {
+        let currentPrice = variantsObj[this.selectedVariant].price;
+        let priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
+        if (priceMatch.includes(',')) {
+          priceMatch = priceMatch[0].replace(',', '.');
+        }
+        const basePrice = parseFloat(priceMatch);
+        const finalPrice = basePrice * times;
+
+        const finalPriceString = currentPrice.replace(/\d+(\.\d{2})?/g, finalPrice.toFixed(2));
+        return finalPriceString;
       },
-      get getPerBottlePrice() {
-        return variantsObj[this.selectedVariant].compareAtPrice;
+      getPerBottlePrice(times, total) {
+        let currentPrice = variantsObj[this.selectedVariant].price;
+        let priceMatch = currentPrice.match(/[\d,]+\.?\d*/);
+        if (priceMatch.includes(',')) {
+          priceMatch = priceMatch[0].replace(',', '.');
+        }
+        const basePrice = parseFloat(priceMatch);
+        const finalPrice = basePrice * times;
+        const perBottlePrice = finalPrice / total;
+
+        const finalPriceString = currentPrice.replace(/\d+(\.\d{2})?/g, perBottlePrice.toFixed(2));
+        return finalPriceString + ' per bottle';
       },
-      get getSavingAmount() {
-        return variantsObj[this.selectedVariant].compareAtPrice - variantsObj[this.selectedVariant].originalPrice;
+      getSavings(freeCount) {
+        let currentPrice = variantsObj[this.selectedVariant].price;
+        let priceMatch = currentPrice.match(/\d+(\.\d{2})?/g);
+        if (priceMatch.includes(',')) {
+          priceMatch = priceMatch[0].replace(',', '.');
+        }
+        const basePrice = parseFloat(priceMatch);
+        const savings = basePrice * freeCount;
+
+        const savingsString = currentPrice.replace(/\d+(\.\d{2})?/g, savings.toFixed(2));
+        return `SAVE ${savingsString}`;
       }
     });
   });
