@@ -181,12 +181,20 @@
                   <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
                 </div>
                 <button
+                  x-show="!$store.bundleBuilder.isProductSelected(product.id)"
                   @click="$store.bundleBuilder.addProduct(product)"
-                  :disabled="$store.bundleBuilder.isBundleReady"
-                  :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-saffron' : 'bg-midnight'"
-                  class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                  :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                  class="w-full text-white text-lg bg-midnight py-2.5 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                   Add +
                 </button>
+                <div x-show="$store.bundleBuilder.isProductSelected(product.id)" class="flex justify-between items-center p-1 rounded-full border border-solid border-gray-200">
+                  <button @click="$store.bundleBuilder.removeProduct(product.id)" class="text-white text-lg bg-midnight size-10 rounded-full font-bold transition-colors border-0 cursor-pointer">-</button>
+                  <span x-text="$store.bundleBuilder.getProductQuantity(product.id)" class="font-bold text-xl"></span>
+                  <button
+                    :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                    @click="$store.bundleBuilder.addProduct(product)"
+                    class="text-white text-lg bg-midnight size-10 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">+</button>
+                </div>
               </div>
             </template>
           </template>
@@ -194,7 +202,7 @@
       </div>
       <div class="col-span-3">
         <div class="p-4 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
-          <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProducts.length === 3 ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${3 - $store.bundleBuilder.selectedProducts.length} MORE SCENT${3 - $store.bundleBuilder.selectedProducts.length > 1 ? 'S' : ''}`"></h2>
+          <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></h2>
           {% comment %} Progress {% endcomment %}
           <div class="progress">
             <div
@@ -238,7 +246,7 @@
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
-      selectedBundleType: "2+1",
+      selectedBundleType: "8+8",
       activeCategory: "All",
       selectedBrand: "",
       searchText: "",
@@ -340,16 +348,26 @@
           this.selectedProducts.push({quantity: 1, data: product});
         }
       },
-      removeProduct(index) {
-        this.selectedProducts.splice(index, 1);
+      removeProduct(productId) {
+        // find that product and decrease the quantity if quantity is 1 then remove it
+        const product = this.selectedProducts.find(item => item.data.id === productId);
+        if (product.quantity > 1) {
+          product.quantity--;
+        } else {
+          this.selectedProducts.splice(this.selectedProducts.indexOf(product), 1);
+        }
       },
       isProductSelected(productId) {
-        return this.selectedProducts.some(product => product.id === productId);
+        return this.selectedProducts.some(product => product.data.id === productId);
       },
-      get isBundleReady() {
-        const selectedProductsLength = this.selectedProducts.reduce((acc, product) => acc + product.quantity, 0);
-        const selectedBundleLength = this.selectedBundleType.split("+").map(Number).reduce((a, b) => a + b, 0);
-        return selectedProductsLength === selectedBundleLength;
+      getProductQuantity(productId) {
+        return this.selectedProducts.find(product => product.data.id === productId).quantity;
+      },
+      get bundleLength() {
+        return this.selectedBundleType.split("+").map(Number).reduce((a, b) => a + b, 0);
+      },
+      get selectedProductsLength() {
+        return this.selectedProducts.reduce((acc, product) => acc + product.quantity, 0);
       },
     });
   });
