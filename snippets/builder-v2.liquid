@@ -187,31 +187,38 @@
                   class="w-full text-white text-lg bg-midnight py-2.5 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                   Add +
                 </button>
-                <div x-show="$store.bundleBuilder.isProductSelected(product.id)" class="flex justify-between items-center p-1 rounded-full border border-solid border-gray-200">
-                  <button @click="$store.bundleBuilder.removeProduct(product.id)" class="text-white text-lg bg-midnight size-10 rounded-full font-bold transition-colors border-0 cursor-pointer">-</button>
-                  <span x-text="$store.bundleBuilder.getProductQuantity(product.id)" class="font-bold text-xl"></span>
-                  <button
-                    :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
-                    @click="$store.bundleBuilder.addProduct(product)"
-                    class="text-white text-lg bg-midnight size-10 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">+</button>
-                </div>
+                <template x-if="$store.bundleBuilder.isProductSelected(product.id)">
+                  <div class="flex justify-between items-center p-1 rounded-full border border-solid border-gray-200">
+                    <button @click="$store.bundleBuilder.removeProduct(product.id)" class="text-white text-lg bg-midnight size-10 rounded-full font-bold transition-colors border-0 cursor-pointer">-</button>
+                    <span x-text="$store.bundleBuilder.getProductQuantity(product.id)" class="font-bold text-xl"></span>
+                    <button
+                      :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                      @click="$store.bundleBuilder.addProduct(product)"
+                      class="text-white text-lg bg-midnight size-10 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">+</button>
+                  </div>
+                </template>
               </div>
             </template>
           </template>
         </div>
       </div>
       <div class="md:col-span-3">
-        <div class="p-4 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
+        <div class="p-6 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
           <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></h2>
           {% comment %} Progress {% endcomment %}
-          <div class="progress">
+          <div class="bg-gray-200 rounded-full relative">
             <div
-              class="progress-bar"
+              class="bg-saffron rounded-full h-4 !block transition-all duration-300"
               role="progressbar"
-              style="width: 50%"
-              aria-valuenow="50"
-              aria-valuemin="0"
-              aria-valuemax="100"></div>
+              :style="{ width: $store.bundleBuilder.progressWidth }"></div>
+            <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
+              <template x-for="i in $store.bundleBuilder.bundleLength">
+                <span
+                  class="w-6 h-6 flex items-center justify-center text-midnight border-2 border-solid text-xs font-bold rounded-full"
+                  x-text="i"
+                  :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-saffron text-white border-midnight' : 'bg-white text-midnight border-gray-200'"></span>
+              </template>
+            </div>
           </div>
           <div class="space-y-2">
             <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
@@ -246,7 +253,7 @@
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
-      selectedBundleType: "8+8",
+      selectedBundleType: "3+2",
       activeCategory: "All",
       selectedBrand: "",
       searchText: "",
@@ -340,6 +347,19 @@
       get selectedProductsLength() {
         return this.selectedProducts.reduce((acc, product) => acc + product.quantity, 0);
       },
+      get progressWidth() {
+        const width = (this.selectedProductsLength / this.bundleLength) * 100;
+        return width + "%";
+      },
+      init() {
+        Alpine.effect(() => {
+          const selectedBundleType = this.selectedBundleType;
+          console.log('Bundle type is changed: ', selectedBundleType);
+          if (this.selectedProductsLength > this.bundleLength) {
+            this.selectedProducts = [];
+          }
+        });
+      }
     });
   });
 </script>

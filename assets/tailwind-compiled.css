@@ -137,6 +137,10 @@
     top: 2px
 }
 
+.-top-1 {
+    top: -4px
+}
+
 .isolate {
     isolation: isolate
 }
@@ -393,6 +397,18 @@
     margin-top: 44px
 }
 
+.-mt-6 {
+    margin-top: -24px
+}
+
+.mt-1 {
+    margin-top: 4px
+}
+
+.mb-5 {
+    margin-bottom: 20px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -587,6 +603,10 @@
     height: 192px
 }
 
+.h-2 {
+    height: 8px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -649,6 +669,10 @@
 
 .w-full {
     width: 100%
+}
+
+.w-px {
+    width: 1px
 }
 
 .min-w-\[1rem\] {
@@ -728,6 +752,10 @@
 }
 
 .flex-grow {
+    flex-grow: 1
+}
+
+.grow {
     flex-grow: 1
 }
 
@@ -1139,6 +1167,11 @@
     border-color: rgb(233 115 94 / var(--tw-border-opacity, 1)) !important
 }
 
+.border-midnight {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 46 79 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1502,6 +1535,11 @@
 .py-8 {
     padding-top: 32px;
     padding-bottom: 32px
+}
+
+.px-1 {
+    padding-left: 4px;
+    padding-right: 4px
 }
 
 .\!pb-3 {
@@ -1960,6 +1998,12 @@
 
 .transition-opacity {
     transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms
+}
+
+.transition-all {
+    transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms
 }
