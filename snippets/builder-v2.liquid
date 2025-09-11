@@ -181,11 +181,11 @@
                   <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
                 </div>
                 <button
-                  @click="$store.bundleBuilder.addRemoveProduct(product)"
-                  :disabled="!$store.bundleBuilder.isProductSelected(product.id) && $store.bundleBuilder.selectedProducts.length >= 3"
+                  @click="$store.bundleBuilder.addProduct(product)"
+                  :disabled="$store.bundleBuilder.isBundleReady"
                   :class="$store.bundleBuilder.isProductSelected(product.id) ? 'bg-saffron' : 'bg-midnight'"
                   class="w-full text-white text-lg py-2.5 px-4 rounded-lg font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                  <span x-text="$store.bundleBuilder.isProductSelected(product.id) ? 'Remove -' : 'Add +'"></span>
+                  Add +
                 </button>
               </div>
             </template>
@@ -206,10 +206,11 @@
               aria-valuemax="100"></div>
           </div>
           <div class="space-y-2">
-            <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.id">
+            <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
               <div class="flex items-center justify-between">
-                <p class="text-gray-600" x-text="product.name"></p>
-                <p class="text-gray-900 font-bold" x-text="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                <p class="text-gray-600" x-text="product.data.name"></p>
+                <p class="text-gray-600" x-text="product.quantity"></p>
+                <p class="text-gray-900 font-bold" x-text="product.data.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
               </div>
             </template>
           </div>
@@ -242,7 +243,36 @@
       selectedBrand: "",
       searchText: "",
       addingToCart: false,
-      selectedProducts: [],
+      selectedProducts: [
+        {
+          quantity: 1,
+          data: {
+            id: 14785805123951,
+            name: "Aventus",
+            image: "/cdn/shop/files/royal_summit_elixir_hero.png?v=1757359349",
+            ratingCount: "",
+            tags: ["bestseller","Creed","Creed Aventus","EN","Man","onsale"],
+            variants: {
+              
+                "30ML": {
+                  id: 52196712644975,
+                  originalPrice: "$26.99"
+                },
+              
+                "50ML": {
+                  id: 52196712677743,
+                  originalPrice: "$31.99"
+                },
+              
+                "100ML": {
+                  id: 52196712710511,
+                  originalPrice: "$41.99"
+                },
+              
+            }
+          },
+        }
+      ],
       availableProducts: [
         {% for bundle_product in bundle_collection.products %}
           {
@@ -301,15 +331,13 @@
         const savings = basePrice * freeCount;
         return this._formatPrice(savings, 'savings');
       },
-      addRemoveProduct(product) {
-        if (this.selectedProducts.length < 3 && !this.isProductSelected(product.id)) {
-          this.selectedProducts.push(product);
-          if (this.selectedProducts.length === 3) {
-            // this.showModal = false;
-            this.addBundleToCart();
-          }
+      addProduct(product) {
+        // check if that product is already on the selected product array or not 
+        if (this.selectedProducts.some(item => item.data.id === product.id)) {
+          // the product is already on the list, just increase the quantity
+          this.selectedProducts.find(item => item.data.id === product.id).quantity++;
         } else {
-          this.removeProduct(this.selectedProducts.findIndex(item => item.id === product.id));
+          this.selectedProducts.push({quantity: 1, data: product});
         }
       },
       removeProduct(index) {
@@ -317,6 +345,11 @@
       },
       isProductSelected(productId) {
         return this.selectedProducts.some(product => product.id === productId);
+      },
+      get isBundleReady() {
+        const selectedProductsLength = this.selectedProducts.reduce((acc, product) => acc + product.quantity, 0);
+        const selectedBundleLength = this.selectedBundleType.split("+").map(Number).reduce((a, b) => a + b, 0);
+        return selectedProductsLength === selectedBundleLength;
       },
     });
   });
