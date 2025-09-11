@@ -235,7 +235,7 @@
             <p class="text-gray-600 text-center">Your bundle is empty.</p>
           </div>
           <button
-            @click="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? $store.bundleBuilder.checkout() : ''"
+            @click="$store.bundleBuilder.addBundleToCart()"
             class="w-full text-white text-lg bg-midnight py-2.5 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength">
             <span x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'CHECKOUT' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></span>
@@ -361,6 +361,23 @@
       get progressWidth() {
         const width = (this.selectedProductsLength / this.bundleLength) * 100;
         return width + "%";
+      },
+      addBundleToCart() {
+        this.addingToCart = true;
+
+        let checkoutURl = '/cart/';
+        this.selectedProducts.forEach((product, index) => {
+          if (index === 0) {
+            checkoutURl += `${product.data.variants[this.selectedVariant].id}:${product.quantity}`;
+          } else {
+            checkoutURl += `,${product.data.variants[this.selectedVariant].id}:${product.quantity}`;
+          }
+        });
+
+        window.location.href = checkoutURl;
+        setTimeout(() => {
+          this.addingToCart = false;
+        }, 3000);
       },
       init() {
         Alpine.effect(() => {
