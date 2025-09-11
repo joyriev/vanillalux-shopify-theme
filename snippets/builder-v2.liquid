@@ -59,7 +59,7 @@
         data-bundle-type="2+1"
         @click="$store.bundleBuilder.selectedBundleType = '2+1'"
         :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-saffron' : ''">
-        <div class="p-4">
+        <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 2, Get 1 Free</h3>
           <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(2)">00.00</p>
           <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(2, 3)">00.00</p>
@@ -71,7 +71,7 @@
         data-bundle-type="3+2"
         @click="$store.bundleBuilder.selectedBundleType = '3+2'"
         :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-saffron' : ''">
-        <div class="p-4">
+        <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 3, Get 2 Free</h3>
           <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(3)">00.00</p>
           <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(3, 5)">00.00</p>
@@ -83,7 +83,8 @@
         data-bundle-type="4+1"
         @click="$store.bundleBuilder.selectedBundleType = '5+4'"
         :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-saffron' : ''">
-        <div class="p-4">
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-skyblue text-midnight px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Free Shipping</div>
+        <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 5, Get 4 Free</h3>
           <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(5)">00.00</p>
           <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(5, 9)">00.00</p>
@@ -95,7 +96,8 @@
         data-bundle-type="5+1"
         @click="$store.bundleBuilder.selectedBundleType = '8+8'"
         :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-saffron' : ''">
-        <div class="p-4">
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-saffron text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
+        <div class="p-4 pt-6">
           <h3 class="bundle-type-desc my-0 font-semibold">Buy 8, Get 8 Free</h3>
           <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(8)">00.00</p>
           <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(8, 16)">00.00</p>

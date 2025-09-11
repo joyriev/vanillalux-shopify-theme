@@ -1631,6 +1631,10 @@
     padding-top: 32px
 }
 
+.pt-2 {
+    padding-top: 8px
+}
+
 .text-left {
     text-align: left
 }
