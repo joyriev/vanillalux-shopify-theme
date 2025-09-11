@@ -103,8 +103,8 @@
         <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(8)">SAVE 00.00</p>
       </button>
     </div>
-    <div class="grid grid-cols-8 gap-6">
-      <div class="col-span-5">
+    <div class="grid md:grid-cols-8 gap-6">
+      <div class="md:col-span-5">
         <div class="mb-6">
           <div class="flex space-x-1 mb-4">
             <button
@@ -200,7 +200,7 @@
           </template>
         </div>
       </div>
-      <div class="col-span-3">
+      <div class="md:col-span-3">
         <div class="p-4 bg-white border border-solid border-gray-200 rounded-lg sticky top-6">
           <h2 class="text-2xl font-bold text-gray-900 mt-0 mb-4 text-center tracking-normal" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'YOUR BUNDLE IS READY! 👑' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></h2>
           {% comment %} Progress {% endcomment %}
@@ -251,36 +251,7 @@
       selectedBrand: "",
       searchText: "",
       addingToCart: false,
-      selectedProducts: [
-        {
-          quantity: 1,
-          data: {
-            id: 14785805123951,
-            name: "Aventus",
-            image: "/cdn/shop/files/royal_summit_elixir_hero.png?v=1757359349",
-            ratingCount: "",
-            tags: ["bestseller","Creed","Creed Aventus","EN","Man","onsale"],
-            variants: {
-              
-                "30ML": {
-                  id: 52196712644975,
-                  originalPrice: "$26.99"
-                },
-              
-                "50ML": {
-                  id: 52196712677743,
-                  originalPrice: "$31.99"
-                },
-              
-                "100ML": {
-                  id: 52196712710511,
-                  originalPrice: "$41.99"
-                },
-              
-            }
-          },
-        }
-      ],
+      selectedProducts: [],
       availableProducts: [
         {% for bundle_product in bundle_collection.products %}
           {

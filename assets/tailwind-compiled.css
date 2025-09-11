@@ -2299,6 +2299,14 @@
         order: 1
     }
 
+    .md\:col-span-3 {
+        grid-column: span 3 / span 3
+    }
+
+    .md\:col-span-5 {
+        grid-column: span 5 / span 5
+    }
+
     .md\:mt-14 {
         margin-top: 56px
     }
@@ -2367,6 +2375,10 @@
 
     .md\:grid-cols-4 {
         grid-template-columns: repeat(4, minmax(0, 1fr))
+    }
+
+    .md\:grid-cols-8 {
+        grid-template-columns: repeat(8, minmax(0, 1fr))
     }
 
     .md\:flex-row {
