@@ -218,17 +218,33 @@
                 <span
                   class="w-6 h-6 flex items-center justify-center text-midnight border-2 border-solid text-xs font-bold rounded-full"
                   x-text="i"
-                  :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-saffron text-white border-midnight' : 'bg-white text-midnight border-gray-200'"></span>
+                  :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-saffron text-white border-midnight' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-midnight border-saffron' : 'bg-midnight text-white border-midnight')"></span>
               </template>
             </div>
           </div>
           <template x-if="$store.bundleBuilder.selectedProductsLength > 0">
             <div class="space-y-2 my-8">
               <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
-                <div class="flex items-center justify-between">
-                  <p class="text-gray-600" x-text="product.data.name"></p>
-                  <p class="text-gray-600" x-text="product.quantity"></p>
-                  <p class="text-gray-900 font-bold" x-text="product.data.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
+                <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
+                  <button class="text-saffron font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+                  <img
+                    :src="product.data.image"
+                    :alt="product.data.name"
+                    height=""
+                    width=""
+                    class="size-12 object-contain">
+                  <div class="flex-grow">
+                    <h4 class="my-0 font-bold" x-text="product.data.name"></h4>
+                    <p class="my-0 text-sm" x-text="$store.bundleBuilder.selectedVariant"></p>
+                  </div>
+                  <div class="p-1 rounded-full border border-solid border-gray-200 flex items-center justify-between gap-2">
+                    <button class="bg-midnight text-white size-6 rounded-full font-bold cursor-pointer border-0" @click="$store.bundleBuilder.removeProduct(product.data.id)">-</button>
+                    <span class="leading-none" x-text="product.quantity"></span>
+                    <button
+                      class="bg-midnight text-white size-6 rounded-full font-bold cursor-pointer border-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                      :disabled="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength"
+                      @click="$store.bundleBuilder.addProduct(product.data)">+</button>
+                  </div>
                 </div>
               </template>
             </div>
@@ -238,7 +254,7 @@
           </div>
           <button
             @click="$store.bundleBuilder.addBundleToCart()"
-            class="w-full text-white text-lg bg-midnight py-2.5 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            class="w-full text-white text-xl bg-midnight py-3 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength">
             <span x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'CHECKOUT' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></span>
           </button>
@@ -348,6 +364,9 @@
           this.selectedProducts.splice(this.selectedProducts.indexOf(product), 1);
         }
       },
+      deleteProduct(productId) {
+        this.selectedProducts.splice(this.selectedProducts.indexOf(this.selectedProducts.find(product => product.data.id === productId)), 1);
+      },
       isProductSelected(productId) {
         return this.selectedProducts.some(product => product.data.id === productId);
       },
@@ -356,6 +375,10 @@
       },
       get bundleLength() {
         return this.selectedBundleType.split("+").map(Number).reduce((a, b) => a + b, 0);
+      },
+      get paidProductsLength() {
+        const paidProducts = this.selectedBundleType.split("+")[0];
+        return parseInt(paidProducts);
       },
       get selectedProductsLength() {
         return this.selectedProducts.reduce((acc, product) => acc + product.quantity, 0);
