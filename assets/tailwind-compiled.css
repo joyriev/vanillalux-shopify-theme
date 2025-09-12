@@ -153,6 +153,14 @@
     z-index: 9999
 }
 
+.z-50 {
+    z-index: 50
+}
+
+.z-\[999999\] {
+    z-index: 999999
+}
+
 .col-span-1 {
     grid-column: span 1 / span 1
 }
@@ -244,6 +252,11 @@
 .my-8 {
     margin-top: 32px;
     margin-bottom: 32px
+}
+
+.my-6 {
+    margin-top: 24px;
+    margin-bottom: 24px
 }
 
 .\!mb-0 {
@@ -593,6 +606,10 @@
     height: 100%
 }
 
+.h-screen {
+    height: 100vh
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -655,6 +672,10 @@
 
 .w-full {
     width: 100%
+}
+
+.w-screen {
+    width: 100vw
 }
 
 .min-w-\[1rem\] {
@@ -1319,6 +1340,11 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
+.bg-gray-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -1504,6 +1530,11 @@
 .py-8 {
     padding-top: 32px;
     padding-bottom: 32px
+}
+
+.px-7 {
+    padding-left: 28px;
+    padding-right: 28px
 }
 
 .\!pb-3 {
@@ -1881,6 +1912,10 @@
     opacity: 0.7
 }
 
+.opacity-50 {
+    opacity: 0.5
+}
+
 .shadow {
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -1914,6 +1949,24 @@
 .shadow-xl {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-2xl {
+    --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-\[0px_-4px_20px_rgba\(0\2c 0\2c 0\2c 0\.1\)\] {
+    --tw-shadow: 0px -4px 20px rgba(0,0,0,0.1);
+    --tw-shadow-colored: 0px -4px 20px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-\[0px_-4px_20px_rgba\(0\2c 0\2c 0\2c 0\.15\)\] {
+    --tw-shadow: 0px -4px 20px rgba(0,0,0,0.15);
+    --tw-shadow-colored: 0px -4px 20px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
