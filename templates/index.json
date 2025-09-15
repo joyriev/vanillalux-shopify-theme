@@ -215,7 +215,7 @@
       ],
       "name": "Homepage Products Tab",
       "settings": {
-        "background_color": "#edeef7",
+        "background_color": "#f1f6ff",
         "heading": "Selected for you",
         "button_text": "Explore All",
         "button_link": "shopify://collections/all",
