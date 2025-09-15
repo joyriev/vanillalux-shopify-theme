@@ -1346,6 +1346,10 @@
     background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
 }
 
+.bg-warmAmber\/10 {
+    background-color: rgb(180 115 66 / 0.1)
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
