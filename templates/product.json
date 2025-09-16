@@ -115,6 +115,7 @@
         },
         "videos_iXPFhh": {
           "type": "videos",
+          "disabled": true,
           "settings": {
             "video1": "shopify://files/videos/Perfume REV 2 UGC 15-6-25.mp4",
             "video2": "shopify://files/videos/Perfume 2nd 21-06-25.mp4",
