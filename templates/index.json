@@ -433,28 +433,32 @@
           "type": "list_item",
           "settings": {
             "title": "Clean, Cruelty-Free Formulas",
-            "description": "for peace of mind"
+            "description": "for peace of mind",
+            "image": "shopify://shop_images/leaf-icon.svg"
           }
         },
         "list_item_yxDVcQ": {
           "type": "list_item",
           "settings": {
             "title": "Smells That Last All Day",
-            "description": "no top note vanishing act"
+            "description": "no top note vanishing act",
+            "image": "shopify://shop_images/clock-icon.svg"
           }
         },
         "list_item_htAiEB": {
           "type": "list_item",
           "settings": {
             "title": "Mini Sizes to Test First",
-            "description": "before you commit to full bottles"
+            "description": "before you commit to full bottles",
+            "image": "shopify://shop_images/aerosol-spray-bottle-icon.svg"
           }
         },
         "list_item_bhN48G": {
           "type": "list_item",
           "settings": {
             "title": "Free Returns Within 60 Days",
-            "description": "just in case it’s not love at first spritz"
+            "description": "just in case it’s not love at first spritz",
+            "image": "shopify://shop_images/undo-arrow-icon.svg"
           }
         }
       },
