@@ -27,9 +27,9 @@
           alt="makes different"
           width="450"
           height="450">
-        <ul class="list-none p-0 max-w-[450px] mx-auto">
+        <ul class="list-none p-0 max-w-[450px] mx-auto space-y-3">
           {% for block in section.blocks %}
-            <li class="mb-6 flex items-center gap-4 bg-black px-4 py-2">
+            <li class="flex items-center gap-4 bg-black px-4 py-2">
               <img
                 src="{{ block.settings.image | image_url: width: 80 }}"
                 alt="check"
