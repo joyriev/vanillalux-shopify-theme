@@ -1459,6 +1459,10 @@
     fill: #e9735e
 }
 
+.fill-warmAmber {
+    fill: #b47342
+}
+
 .object-contain {
     -o-object-fit: contain;
        object-fit: contain
@@ -2322,6 +2326,11 @@
 .hover\:bg-warmAmber:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(180 115 66 / var(--tw-bg-opacity, 1))
+}
+
+.hover\:bg-midnight:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(34 46 79 / var(--tw-bg-opacity, 1))
 }
 
 .hover\:text-midnight:hover {
