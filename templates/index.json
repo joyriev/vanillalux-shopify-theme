@@ -425,7 +425,8 @@
           "type": "list_item",
           "settings": {
             "title": "Inspired by Luxury Icons",
-            "description": "without the inflated price tags"
+            "description": "without the inflated price tags",
+            "image": "shopify://shop_images/crown-icon.svg"
           }
         },
         "list_item_Y8PNCx": {
@@ -468,6 +469,7 @@
       "settings": {
         "background_color": "#ffffff",
         "makes_diferent_title": "Luxury redefined",
+        "makes_diferent_description": "CRAFTED WITH PRECISION",
         "makes-different-image": "shopify://shop_images/bottles.png",
         "makes-different-btn-text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "makes-different-btn-link": "",
