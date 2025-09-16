@@ -274,6 +274,7 @@
     },
     "luxury_without_price_tag_25793G": {
       "type": "without-price-tag",
+      "settings": {}
     },
     "shop_by_fHtnnB": {
       "type": "shop-by",
@@ -467,7 +468,7 @@
       "settings": {
         "background_color": "#ffffff",
         "makes_diferent_title": "What Makes Dupe Store Different? Everything That Matters.",
-        "makes-different-image": "shopify://shop_images/makesdifferent.png",
+        "makes-different-image": "shopify://shop_images/bottles.png",
         "makes-different-btn-text": "BUY 2 GET 1 FREE - ENDS SOON!",
         "makes-different-btn-link": "",
         "padding_top": 72,
