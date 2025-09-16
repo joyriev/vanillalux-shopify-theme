@@ -1153,6 +1153,11 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-warmAmber {
+    --tw-border-opacity: 1;
+    border-color: rgb(180 115 66 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -2296,6 +2301,11 @@
 }
 
 .focus\:border-\[\#b47342\]:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(180 115 66 / var(--tw-border-opacity, 1))
+}
+
+.focus\:border-warmAmber:focus {
     --tw-border-opacity: 1;
     border-color: rgb(180 115 66 / var(--tw-border-opacity, 1))
 }

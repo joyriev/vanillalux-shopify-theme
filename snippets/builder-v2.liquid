@@ -34,12 +34,12 @@
         <button
           class="bg-white rounded-xl p-3 md:p-6 border-3 border-solid border-gray-200 cursor-pointer relative"
           @click="$store.bundleBuilder.selectedVariant = '{{ variant.title }}';"
-          :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-saffron' : ''">
+          :class="'{{ variant.title }}' === $store.bundleBuilder.selectedVariant ? 'border-warmAmber' : ''">
           {% if variant.title == '50ML' %}
             <div class="absolute -top-4 left-1/2 [translate:-50%] bg-skyblue text-midnight px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Popular</div>
           {% endif %}
           {% if variant.title == '100ML' %}
-            <div class="absolute -top-4 left-1/2 [translate:-50%] bg-saffron text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Bestseller</div>
+            <div class="absolute -top-4 left-1/2 [translate:-50%] bg-warmAmber text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Bestseller</div>
           {% endif %}
           <div class="variant-image">
             <img
@@ -59,27 +59,27 @@
           class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
           data-bundle-type="4+1"
           @click="$store.bundleBuilder.selectedBundleType = '5+4'"
-          :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-saffron' : ''">
+          :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-warmAmber' : ''">
           <div class="absolute -top-4 left-1/2 [translate:-50%] bg-skyblue text-midnight px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Free Shipping</div>
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold">Buy 5, Get 4 Free</h3>
-            <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(5)">00.00</p>
-            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(5, 9)">00.00</p>
+            <p class="my-2 text-2xl font-bold text-warmAmber" x-text="$store.bundleBuilder.getBundlePrice('5+4')">00.00</p>
+            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice('5+4')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(4)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getBundleSavings('5+4')">SAVE 00.00</p>
         </button>
         <button
           class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
           data-bundle-type="5+1"
           @click="$store.bundleBuilder.selectedBundleType = '8+8'"
-          :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-saffron' : ''">
-          <div class="absolute -top-4 left-1/2 [translate:-50%] bg-saffron text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
+          :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-warmAmber' : ''">
+          <div class="absolute -top-4 left-1/2 [translate:-50%] bg-warmAmber text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold">Buy 8, Get 8 Free</h3>
-            <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(8)">00.00</p>
-            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(8, 16)">00.00</p>
+            <p class="my-2 text-2xl font-bold text-warmAmber" x-text="$store.bundleBuilder.getBundlePrice('8+8')">00.00</p>
+            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice('8+8')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(8)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getBundleSavings('8+8')">SAVE 00.00</p>
         </button>
       </div>
       <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
@@ -87,25 +87,25 @@
           class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
           data-bundle-type="2+1"
           @click="$store.bundleBuilder.selectedBundleType = '2+1'"
-          :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-saffron' : ''">
+          :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-warmAmber' : ''">
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold">Buy 2, Get 1 Free</h3>
-            <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(2)">00.00</p>
-            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(2, 3)">00.00</p>
+            <p class="my-2 text-2xl font-bold text-warmAmber" x-text="$store.bundleBuilder.getBundlePrice('2+1')">00.00</p>
+            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice('2+1')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(1)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getBundleSavings('2+1')">SAVE 00.00</p>
         </button>
         <button
           class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
           data-bundle-type="3+2"
           @click="$store.bundleBuilder.selectedBundleType = '3+2'"
-          :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-saffron' : ''">
+          :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-warmAmber' : ''">
           <div class="p-4 pt-6">
             <h3 class="bundle-type-desc my-0 font-semibold">Buy 3, Get 2 Free</h3>
-            <p class="my-2 text-2xl font-bold text-saffron" x-text="$store.bundleBuilder.getBundlePrice(3)">00.00</p>
-            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice(3, 5)">00.00</p>
+            <p class="my-2 text-2xl font-bold text-warmAmber" x-text="$store.bundleBuilder.getBundlePrice('3+2')">00.00</p>
+            <p class="my-0 text-midnight text-lg" x-text="$store.bundleBuilder.getPerBottlePrice('3+2')">00.00</p>
           </div>
-          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getSavings(2)">SAVE 00.00</p>
+          <p class="my-0 text-white bg-midnight py-1 text-base font-bold rounded-b-[10px]" x-text="$store.bundleBuilder.getBundleSavings('3+2')">SAVE 00.00</p>
         </button>
       </div>
     </div>
@@ -115,20 +115,20 @@
           <div class="flex space-x-1 mb-4">
             <button
               @click="$store.bundleBuilder.activeCategory = 'All'"
-              :class="$store.bundleBuilder.activeCategory === 'All' && 'border-2 border-saffron bg-red-50'"
+              :class="$store.bundleBuilder.activeCategory === 'All' && 'border-2 border-warmAmber bg-red-50'"
               class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">All</button>
             <button
               @click="$store.bundleBuilder.activeCategory = 'Man'"
-              :class="$store.bundleBuilder.activeCategory === 'Man' && 'border-2 border-saffron bg-red-50'"
+              :class="$store.bundleBuilder.activeCategory === 'Man' && 'border-2 border-warmAmber bg-red-50'"
               class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Men's</button>
             <button
               @click="$store.bundleBuilder.activeCategory = 'Woman'"
-              :class="$store.bundleBuilder.activeCategory === 'Woman' && 'border-2 border-saffron bg-red-50'"
+              :class="$store.bundleBuilder.activeCategory === 'Woman' && 'border-2 border-warmAmber bg-red-50'"
               class="px-4 py-2 rounded font-semibold border border-solid cursor-pointer bg-white border-gray-200">Women's</button>
           </div>
           <!-- Search -->
           <div class="grid grid-cols-2 gap-4">
-            <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-saffron block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
+            <select x-model="$store.bundleBuilder.selectedBrand" class="bg-white border border-gray-300 text-gray-900 text-sm rounded focus:border-2 focus:border-warmAmber block w-full p-2.5 h-10 focus:outline-none focus:ring-0">
               <option selected value="">Shop By Brand</option>
               <option value="Creed">Creed</option>
               <option value="Dior">Dior</option>
@@ -149,7 +149,7 @@
                 type="text"
                 x-model="$store.bundleBuilder.searchText"
                 placeholder="Find your perfume"
-                class="w-full p-2.5 pl-10 h-10 bg-gray-100 rounded border-0 border-solid focus:border-2 focus:border-saffron focus:outline-none focus:ring-0">
+                class="w-full p-2.5 pl-10 h-10 bg-white rounded border border-gray-200 border-solid focus:border-2 focus:border-warmAmber focus:outline-none focus:ring-0">
               <span class="absolute top-2.5 left-2.5 svg-wrapper">
                 {{- 'icon-search.svg' | inline_asset_content -}}
               </span>
@@ -159,7 +159,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
           <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
             <template x-if="$store.bundleBuilder.shouldShowProduct(product)">
-              <div class="border border-solid rounded-lg p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-saffron' : 'border-gray-200'">
+              <div class="border bg-white border-solid rounded-lg p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-warmAmber' : 'border-gray-200'">
                 <div class="flex justify-center mb-4">
                   <img
                     :src="product.image"
@@ -210,7 +210,7 @@
           {% comment %} Progress {% endcomment %}
           <div class="bg-gray-200 rounded-full relative">
             <div
-              class="bg-saffron rounded-full h-4 !block transition-all duration-300"
+              class="bg-warmAmber rounded-full h-4 !block transition-all duration-300"
               role="progressbar"
               :style="{ width: $store.bundleBuilder.progressWidth }"></div>
             <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
@@ -218,7 +218,7 @@
                 <span
                   class="w-6 h-6 flex items-center justify-center text-midnight border-2 border-solid text-xs font-bold rounded-full"
                   x-text="i"
-                  :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-saffron text-white border-midnight' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-midnight border-saffron' : 'bg-midnight text-white border-midnight')"></span>
+                  :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-warmAmber text-white border-midnight' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-midnight border-warmAmber' : 'bg-midnight text-white border-midnight')"></span>
               </template>
             </div>
           </div>
@@ -226,7 +226,7 @@
             <div class="space-y-2 my-8">
               <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
                 <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
-                  <button class="text-saffron font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+                  <button class="text-warmAmber font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
                   <img
                     :src="product.data.image"
                     :alt="product.data.name"
@@ -285,7 +285,7 @@
       </div>
       <div class="bg-gray-200 rounded-full relative">
         <div
-          class="bg-saffron rounded-full h-4 !block transition-all duration-300"
+          class="bg-warmAmber rounded-full h-4 !block transition-all duration-300"
           role="progressbar"
           :style="{ width: $store.bundleBuilder.progressWidth }"></div>
         <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
@@ -293,7 +293,7 @@
             <span
               class="w-6 h-6 flex items-center justify-center text-midnight border-2 border-solid text-xs font-bold rounded-full"
               x-text="i"
-              :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-saffron text-white border-midnight' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-midnight border-saffron' : 'bg-midnight text-white border-midnight')"></span>
+              :class="$store.bundleBuilder.selectedProductsLength >= i ? 'bg-warmAmber text-white border-midnight' : (i > $store.bundleBuilder.paidProductsLength ? 'bg-white text-midnight border-warmAmber' : 'bg-midnight text-white border-midnight')"></span>
           </template>
         </div>
       </div>
@@ -301,7 +301,7 @@
         <div class="space-y-2 flex-grow overflow-y-auto">
           <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
             <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
-              <button class="text-saffron font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
+              <button class="text-warmAmber font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
               <img
                 :src="product.data.image"
                 :alt="product.data.name"
@@ -346,13 +346,30 @@
 %}
 
 <script>
-  const variantsObj = {
-      {% for variant in chosen_product.variants %}
-        "{{ variant.title }}": {
-          price: "{{ variant.price | money }}"
+  const packagePrices = {
+    {% for variant in chosen_product.variants %}
+      "{{ variant.title }}": {
+        bundle: {
+            '2+1': "{{ variant.price | times: 2 | money }}",
+            '3+2': "{{ variant.price | times: 3 | money }}",
+            '5+4': "{{ variant.price | times: 5 | money }}",
+            '8+8': "{{ variant.price | times: 8 | money }}"
         },
-      {% endfor %}
-    };
+        savings: {
+            '2+1': "{{ variant.price | times: 1 | money }}",
+            '3+2': "{{ variant.price | times: 2 | money }}",
+            '5+4': "{{ variant.price | times: 4 | money }}",
+            '8+8': "{{ variant.price | times: 8 | money }}"
+        },
+        perBottle: {
+            '2+1': "{{ variant.price | times: 2 | divided_by: 3 | money }}",
+            '3+2': "{{ variant.price | times: 3 | divided_by: 5 | money }}",
+            '5+4': "{{ variant.price | times: 5 | divided_by: 9 | money }}",
+            '8+8': "{{ variant.price | times: 8 | divided_by: 16 | money }}"
+        }
+      },
+    {% endfor %}
+  };
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
@@ -382,44 +399,14 @@
           },
         {% endfor %}
       ],
-      _parsePrice(priceStr) {
-        const match = priceStr.match(/[\d,]+\.?\d*/);
-        if (!match) return 0;
-        
-        const cleanPrice = match[0].includes(',') ? 
-          match[0].replace(',', '.') : match[0];
-        return parseFloat(cleanPrice);
+      getBundlePrice(bundleType) {
+        return packagePrices[this.selectedVariant].bundle[bundleType];
       },
-      _formatPrice(price, format = '') {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const formattedPrice = currentPrice.replace(/\d+(\.\d{2})?/g, price.toFixed(2));
-        
-        switch(format) {
-          case 'bottle':
-            return `${formattedPrice} per bottle`;
-          case 'savings':
-            return `SAVE ${formattedPrice}`;
-          default:
-            return formattedPrice;
-        }
+      getPerBottlePrice(bundleType) {
+        return packagePrices[this.selectedVariant].perBottle[bundleType] + ' per bottle';
       },
-      getBundlePrice(times) {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const basePrice = this._parsePrice(currentPrice);
-        const finalPrice = basePrice * times;
-        return this._formatPrice(finalPrice);
-      },
-      getPerBottlePrice(times, total) {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const basePrice = this._parsePrice(currentPrice);
-        const finalPrice = (basePrice * times) / total;
-        return this._formatPrice(finalPrice, 'bottle');
-      },
-      getSavings(freeCount) {
-        const currentPrice = variantsObj[this.selectedVariant].price;
-        const basePrice = this._parsePrice(currentPrice);
-        const savings = basePrice * freeCount;
-        return this._formatPrice(savings, 'savings');
+      getBundleSavings(bundleType) {
+        return 'SAVE ' + packagePrices[this.selectedVariant].savings[bundleType];
       },
       addProduct(product) {
         // check if that product is already on the selected product array or not 
