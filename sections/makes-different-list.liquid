@@ -19,7 +19,8 @@
   <div class="page-width">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl mt-0 md:text-3xl font-black tracking-tight leading-snug text-center">{{ section.settings.makes_diferent_title }}</h2>
+        <h2 class="text-2xl my-0 md:text-5xl font-black tracking-tight leading-snug text-center">{{ section.settings.makes_diferent_title }}</h2>
+        <p class="mt-2 text-center text-midnight uppercase text-2xl">{{ section.settings.makes_diferent_description }}</p>
         <img
           class="lg:hidden w-full h-auto rounded-xl"
           src={{section.settings.makes-different-image | image_url}}
@@ -28,17 +29,16 @@
           height="450">
         <ul class="list-none p-0 max-w-[450px] mx-auto">
           {% for block in section.blocks %}
-            <li class="mb-6 flex items-center gap-4">
+            <li class="mb-6 flex items-center gap-4 bg-black px-4 py-2">
               <img
-                src="{{ 'check.svg' | asset_url }}"
+                src="{{ block.settings.image | image_url: width: 80 }}"
                 alt="check"
                 width="45"
                 height="45">
               <div>
-                <h3 class="m-0 text-lg font-semibold tracking-normal">{{ block.settings.title }}</h3>
-                <p class="m-0 text-gray-500 tracking-normal">{{ block.settings.description }}</p>
+                <h3 class="m-0 text-2xl font-semibold tracking-normal text-white">{{ block.settings.title }}</h3>
+                <p class="m-0 text-white tracking-normal">{{ block.settings.description }}</p>
               </div>
-
             </li>
           {% endfor %}
         </ul>
@@ -73,11 +73,16 @@
         "default": "What Makes TryScent Different? Everything That Matters."
       },
       {
+        "type": "text",
+        "id": "makes_diferent_description",
+        "label": "Description",
+        "default": "CRAFTED WITH PRECISION"
+      },
+      {
         "type": "image_picker",
         "id": "makes-different-image",
         "label": "Section Image"
-      },
-      {
+      }, {
         "type": "text",
         "id": "makes-different-btn-text",
         "label": "Button Text",
@@ -122,6 +127,10 @@
             "type": "text",
             "id": "description",
             "label": "Description"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
           }
         ]
       }
