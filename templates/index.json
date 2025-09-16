@@ -272,6 +272,9 @@
         "padding_bottom": 32
       }
     },
+    "luxury_without_price_tag_25793G": {
+      "type": "without-price-tag",
+    },
     "special_offer_bogo_nMzyNp": {
       "type": "special-offer-bogo",
       "blocks": {
@@ -635,6 +638,7 @@
     "magazine_reviews_AeDF9g",
     "homepage_products_tab_RwziwE",
     "feature_highlights_wfUacV",
+    "luxury_without_price_tag_25793G",
     "special_offer_bogo_nMzyNp",
     "shop_by_fHtnnB",
     "here_from_them_wccxKG",

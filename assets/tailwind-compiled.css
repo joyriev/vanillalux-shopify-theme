@@ -817,6 +817,10 @@
     grid-template-columns: repeat(5, minmax(0, 1fr))
 }
 
+.grid-cols-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr))
+}
+
 .grid-rows-3 {
     grid-template-rows: repeat(3, minmax(0, 1fr))
 }
@@ -1355,6 +1359,39 @@
     background-color: rgb(180 115 66 / 0.1)
 }
 
+.bg-white\/40 {
+    background-color: rgb(255 255 255 / 0.4)
+}
+
+.bg-white\/20 {
+    background-color: rgb(255 255 255 / 0.2)
+}
+
+.bg-warmAmber\/20 {
+    background-color: rgb(180 115 66 / 0.2)
+}
+
+.bg-\[\#21170d\]\/20 {
+    background-color: rgb(33 23 13 / 0.2)
+}
+
+.bg-\[\#21170d\]\/60 {
+    background-color: rgb(33 23 13 / 0.6)
+}
+
+.bg-\[\#15110f\]\/70 {
+    background-color: rgb(21 17 15 / 0.7)
+}
+
+.bg-amber-400 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(251 191 36 / var(--tw-bg-opacity, 1))
+}
+
+.bg-\[\#15110f\]\/80 {
+    background-color: rgb(21 17 15 / 0.8)
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -1375,12 +1412,38 @@
     background-image: linear-gradient(to right,#b47342,#e2a374)
 }
 
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops))
+}
+
+.bg-\[linear-gradient\(to_right\2c \#fbbf24\2c \#e2a374\)\] {
+    background-image: linear-gradient(to right,#fbbf24,#e2a374)
+}
+
+.bg-\[linear-gradient\(to_right\2c \#b47342\2c \#fff\)\] {
+    background-image: linear-gradient(to right,#b47342,#fff)
+}
+
+.from-amber-400 {
+    --tw-gradient-from: #fbbf24 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(251 191 36 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
+.to-orange-500 {
+    --tw-gradient-to: #f97316 var(--tw-gradient-to-position)
+}
+
 .bg-cover {
     background-size: cover
 }
 
 .bg-bottom {
     background-position: bottom
+}
+
+.bg-center {
+    background-position: center
 }
 
 .fill-current {
@@ -1553,6 +1616,11 @@
 .py-8 {
     padding-top: 32px;
     padding-bottom: 32px
+}
+
+.px-1 {
+    padding-left: 4px;
+    padding-right: 4px
 }
 
 .\!pb-3 {
@@ -2523,6 +2591,11 @@
     .md\:py-20 {
         padding-top: 80px;
         padding-bottom: 80px
+    }
+
+    .md\:py-28 {
+        padding-top: 112px;
+        padding-bottom: 112px
     }
 
     .md\:pb-12 {
