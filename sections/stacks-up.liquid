@@ -17,18 +17,24 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <h2 class="text-center text-2xl md:text-4xl font-bold">{{ section.settings.title }}</h2>
-    <div class="grid gap-0 w-[900px] max-w-[100%] grid-cols-3 mx-auto">
-      <div class="!flex items-end border-0 border-b border-[#12121233] border-solid px-4 py-4 text-sm font-black md:text-base"></div>
-      <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b border-[#12121233] bg-[#f0f2ec] px-4 py-4 text-sm font-black text-white md:text-base">
+    <h2 class="text-center tracking-tight text-2xl md:text-4xl font-bold mb-12">{{ section.settings.title }}</h2>
+    <div class="grid gap-0 w-[700px] max-w-[100%] grid-cols-3 mx-auto">
+      <div class="!flex items-end px-4 py-4 text-sm font-black md:text-base"></div>
+      <div class="flex items-center justify-center bg-warmAmber/10 px-4 py-4 text-sm font-black text-white md:text-base relative">
         <img
-          src="{{ 'tryscent-bottle.png' | asset_url }}"
+          src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/dupe-bottle-removebg-preview.png?v=1758087173"
           height="375"
           width="200"
           class="max-w-16 h-auto"
           alt="TryScent">
+        <img
+          class="absolute -top-4 -right-4 size-14 md:size-20"
+          src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/1_-03.png?v=1758088569"
+          alt="Comparison Winner"
+          height="100"
+          width="100">
       </div>
-      <div class="flex items-center justify-center rounded-t-xl border-0 border-solid border-b border-[#12121233] px-4 py-4 text-center text-sm font-black md:text-base">
+      <div class="flex items-center justify-center rounded-t-xl px-4 py-4 text-center text-sm font-black md:text-base">
         <img
           src="{{ 'other-bottle.png' | asset_url }}"
           height="150"
@@ -36,35 +42,63 @@
           class="max-w-24 h-auto"
           alt="Other Brands">
       </div>
-      <div class="flex items-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 text-sm font-semibold text-black md:text-base">
-        Price
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-regular">
+        METRIC
       </div>
-      <div class="flex items-center justify-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-[#f0f2ec] px-4 py-4 text-sm tracking-normal md:text-base ">
-        From
-        <span class="price_to_modify inline-block ml-1">$7.99</span>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4 tracking-tight text-sm md:text-2xl text-midnight font-bold md:tracking-normal ">
+        DUPE STORE
       </div>
-      <div class="flex items-center justify-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 text-sm tracking-normal md:text-base">
-        <span class="price_to_modify">$325</span>+
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 tracking-tight text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        OTHERS
       </div>
-      {% for block in section.blocks %}
-        {% if block.type == "product" %}
-          <div class="flex items-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 text-sm font-semibold text-black md:text-base">
-            {{ block.settings.name }}
-          </div>
-          <div class="flex items-center justify-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-[#f0f2ec] px-4 py-4 text-sm tracking-normal md:text-base ">
-            {{ block.settings.our_stack }}</div>
-          <div class="flex items-center justify-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 text-sm tracking-normal md:text-base">
-            {{ block.settings.other_brands }}</div>
-        {% endif %}
-      {% endfor %}
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold">
+        QUALITY
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        SUPERIOR INGREDIENTS
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 tracking-tight text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        STANDARD INGREDIENTS
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold">
+        PRICE
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        STARTING AT ONLY
+        <span class="text-green-600">$ 18.99</span>
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 tracking-tight text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        $ 40 - $ 70
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold">
+        EFFECTIVNESS
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        25% EDP
+        <div class="text-base">*LASTING UP TO 6H</div>
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 tracking-tight text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        Max. 15%
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] pr-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold">
+        CUSTOMER SATISFACTION
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] bg-warmAmber/10 px-4 py-4 tracking-tight text-sm md:text-2xl text-[#55351c] font-bold md:tracking-normal ">
+        98% POSITIV                     
+      REVIEWS
+      </div>
+      <div class="text-center [word-break:break-word] border-0 border-solid border-b border-[#12121233] p-4 py-4 tracking-tight text-sm md:text-2xl text-gray-500 font-bold md:tracking-normal">
+        50% POSITIV                    
+      REVIEWS
+      </div>
       <div class="!block"></div>
-      <div class="rounded-b-xl bg-[#f0f2ec] px-4 py-4 !block"></div>
+      <div class="bg-warmAmber/10 px-4 py-4 !block"></div>
       <div class="!block"></div>
     </div>
     <div class="max-w-[400px] mx-auto mt-8 flex flex-col gap-6 items-center">
       <a
         href="#"
-        class="no-underline text-white tracking-normal font-semibold px-8 py-3 bg-saffron hover:bg-skyblue hover:text-midnight rounded-full text-lg text-center transition-colors w-full block tabs-cta-ripple-animation"
+        class="no-underline text-white md:tracking-normal font-semibold px-8 py-3 bg-warmAmber hover:bg-skyblue hover:text-midnight rounded-full text-lg text-center transition-colors w-full block tabs-cta-ripple-animation"
         aria-label="View All">
         {{ section.settings.btn_text }}
       </a>

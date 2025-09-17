@@ -186,15 +186,6 @@
                 <div class="product__title relative" {{ block.shopify_attributes }}>
                   {%- if product.tags contains 'bestseller' or product.tags contains 'onsale' -%}
                     <div class="absolute top-0 right-0">
-                      {% if product.tags contains 'onsale' %}
-                        {%- assign discount_percent = 0 -%}
-                        {%- if product.compare_at_price > product.price -%}
-                          {%- assign discount_percent = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round -%}
-                        {%- endif -%}
-                        <span class="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1">
-                          {{ discount_percent }}% Off
-                        </span>
-                      {% endif %}
                       {% if product.tags contains 'bestseller' %}
                         <span class="inline-block bg-[#22613A] text-white text-sm font-bold px-3 py-1 mr-2">
                           Best Seller
