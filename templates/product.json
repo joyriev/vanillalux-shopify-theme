@@ -495,6 +495,7 @@
       "name": "TryScent Statistics",
       "settings": {
         "background_color": "#faf9f6",
+        "statistic_image": "shopify://shop_images/makesdifferent.png",
         "heading": "10,000+ Dupe Store Bottles Shipped Worldwide",
         "disclaimer": "*RESULTS BASED ON 1,000+ POST-PURCHASE SURVEYS",
         "padding_top": 12,
