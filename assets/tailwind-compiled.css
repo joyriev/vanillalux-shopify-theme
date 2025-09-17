@@ -741,6 +741,22 @@
     max-width: 640px
 }
 
+.max-w-40 {
+    max-width: 160px
+}
+
+.max-w-32 {
+    max-width: 128px
+}
+
+.max-w-28 {
+    max-width: 112px
+}
+
+.max-w-36 {
+    max-width: 144px
+}
+
 .flex-1 {
     flex: 1 1 0%
 }
