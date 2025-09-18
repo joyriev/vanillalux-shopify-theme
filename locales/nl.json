@@ -544,7 +544,13 @@
         },
         "bank_account_choose": "Kies een account om je aankoop veilig af te ronden",
         "bank_account_connect_another": "Sluit een andere bankrekening aan",
-        "bank_account_connect": "Bankrekening aansluiten"
+        "bank_account_connect": "Bankrekening aansluiten",
+        "usdc_cashback_title": "1% cashback",
+        "usdc_cashback_additional_info": "Krijg 1% terug in USDC direct in je portemonnee.",
+        "usdc_cashback_terms": "Voorwaarden zijn van toepassing",
+        "markets_pro_disclaimer_label_express_checkout": "Door te kopen gaat u akkoord met de %{markets_pro_terms} en %{privacy_policy} van Global-e, onze internationale dienstverlener",
+        "markets_pro_disclaimer_express_terms_and_conditions": "voorwaarden",
+        "markets_pro_disclaimer_express_privacy_policy": "privacybeleid"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Uw bestelling kan alleen worden verzonden naar {{countriesList}}. Voeg een nieuw adres toe om door te gaan."
@@ -558,6 +564,21 @@
       },
       "stock": {
         "out_of_stock_in_context_label": "Dit product is niet beschikbaar in uw land/regio."
+      },
+      "contact": {
+        "email_rollup_accessibility_label": "E-mailopties",
+        "phone_rollup_accessibility_label": "Telefoonopties"
+      },
+      "customer_account": {
+        "rollup_accessibility_label": "Accountopties"
+      },
+      "billing": {
+        "billing_address_rollup_accessibility_label": "Rekening naar opties"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "De kassa bevat alleen externe merchandise. Een omleiding naar de externe winkel is vereist om de kassa te voltooien."
+        }
       }
     }
   },
@@ -605,6 +626,31 @@
       "expand_label": "Aankondigingsbalk uitvouwen",
       "collapse_label": "Aankondigingsbalk samenvouwen",
       "close_label": "Aankondigingsbalk sluiten"
+    },
+    "payment_methods": {
+      "replacement_payment_method_title": "Vervangende betaalmethode",
+      "bank_account": {
+        "loading_accessibility_message": "Bankrekeningknop wordt geladen",
+        "iframe_title_accessibility_label": "Bankrekening instellen"
+      },
+      "add_payment_method": {
+        "replace_mode_warning": "Het verwijderen van deze betaalmethode heeft invloed op abonnementen of pre-orders. Vervang deze door een alternatieve betaalmethode om toekomstige bestellingen te blijven ontvangen.",
+        "choose_from_list": "Kies uit lijst",
+        "add_new_button": "Nieuw toevoegen"
+      }
+    },
+    "subscriptions": {
+      "update_payment_instrument": {
+        "title": "Betaalmethode vervangen",
+        "loading": "Betalingsmethoden laden",
+        "no_payment_methods_available": "Nee betaalmethoden beschikbaar",
+        "select_new_payment_method": "Selecteer een nieuwe betaalmethode",
+        "current_method": "Huidig",
+        "cancel": "Annuleren",
+        "save": "Opslaan",
+        "success": "Betaalmethode bijgewerkt",
+        "use_new_payment_method": "+ Gebruik nieuwe betaalmethode"
+      }
     }
   }
 }
