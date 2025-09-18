@@ -523,5 +523,32 @@
       "expanded": "ขยายแบบฟอร์มผู้รับบัตรของขวัญแล้ว",
       "collapsed": "ย่อแบบฟอร์มผู้รับบัตรของขวัญแล้ว"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "email_rollup_accessibility_label": "ตัวเลือกอีเมล",
+        "phone_rollup_accessibility_label": "ตัวเลือกโทรศัพท์"
+      },
+      "customer_account": {
+        "rollup_accessibility_label": "ตัวเลือกบัญชี"
+      },
+      "payment": {
+        "usdc_cashback_title": "เงินคืน 1%",
+        "usdc_cashback_additional_info": "รับเงินคืน 1% เป็น USDC โดยตรงในกระเป๋าเงินของคุณ",
+        "usdc_cashback_terms": "มีข้อกำหนดใช้บังคับ",
+        "markets_pro_disclaimer_label_express_checkout": "โดยการซื้อ คุณตกลงที่จะปฏิบัติตาม %{markets_pro_terms} และ %{privacy_policy} ของ Global-e ผู้ให้บริการระหว่างประเทศของเรา",
+        "markets_pro_disclaimer_express_terms_and_conditions": "ข้อตกลง",
+        "markets_pro_disclaimer_express_privacy_policy": "นโยบายความเป็นส่วนตัว"
+      },
+      "billing": {
+        "billing_address_rollup_accessibility_label": "บิลไปยังตัวเลือก"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "การชำระเงินมีเฉพาะสินค้าระยะไกลเท่านั้น จำเป็นต้องเปลี่ยนเส้นทางไปยังร้านค้าระยะไกลเพื่อดำเนินการชำระเงินให้เสร็จสมบูรณ์"
+        }
+      }
+    }
   }
 }
