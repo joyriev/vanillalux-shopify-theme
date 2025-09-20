@@ -753,6 +753,18 @@
     max-width: 640px
 }
 
+.max-w-\[250px\] {
+    max-width: 250px
+}
+
+.max-w-\[350px\] {
+    max-width: 350px
+}
+
+.max-w-\[300px\] {
+    max-width: 300px
+}
+
 .flex-1 {
     flex: 1 1 0%
 }
@@ -1729,6 +1741,11 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
+}
+
+.text-7xl {
+    font-size: 72px;
+    line-height: 1
 }
 
 .\!font-black {
