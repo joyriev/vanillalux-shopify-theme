@@ -1784,6 +1784,11 @@
     line-height: 1
 }
 
+.text-6xl {
+    font-size: 60px;
+    line-height: 1
+}
+
 .\!font-black {
     font-weight: 900 !important
 }
