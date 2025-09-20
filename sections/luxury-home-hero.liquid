@@ -19,7 +19,7 @@
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
   <div class="page-width">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 itm">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
       <div class="text-center md:px-10">
         <h2 class="uppercase text-7xl font-black tracking-wider leading-none text-white my-0">{{ section.settings.title }}</h2>
         <p class="text-3xl uppercase [font-family:var(--font-heading-family)] font-medium text-[#dd9055] mt-2">{{ section.settings.subtitle }}</p>
@@ -38,7 +38,7 @@
       <div class="flex justify-center">
         <div class="relative">
           <img
-            class="w-full h-auto max-w-[320px]"
+            class="w-full h-auto"
             src="{{ section.settings.image | image_url: width: 700 }}"
             alt="Hero Image"
             width="450"
@@ -48,7 +48,7 @@
             alt="Lab tested"
             width="120"
             height="120"
-            class="absolute top-0 right-0">
+            class="absolute top-[13%] right-[25%]">
         </div>
       </div>
     </div>

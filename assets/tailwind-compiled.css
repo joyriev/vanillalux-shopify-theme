@@ -145,6 +145,34 @@
     top: 2px
 }
 
+.right-12 {
+    right: 48px
+}
+
+.top-12 {
+    top: 48px
+}
+
+.right-\[10\%\] {
+    right: 10%
+}
+
+.top-\[10\%\] {
+    top: 10%
+}
+
+.right-\[20\%\] {
+    right: 20%
+}
+
+.right-\[25\%\] {
+    right: 25%
+}
+
+.top-\[13\%\] {
+    top: 13%
+}
+
 .isolate {
     isolation: isolate
 }
