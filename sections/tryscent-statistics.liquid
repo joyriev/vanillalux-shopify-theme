@@ -16,28 +16,32 @@
   id="{{ section.id }}"
   class="section-{{ section.id }}-padding"
   style="background-color: {{ section.settings.background_color }}">
-  <div class="page-width">
+  <div class="page-width max-w-[750px]">
     <h2 class="text-3xl font-black leading-snug mt-0 uppercase text-center tracking-wider">
       Blind test results
     </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+    <img
+      class="w-full h-auto rounded-xl"
+      src="{{ section.settings.statistic_image | image_url: width: 1200 }}"
+      alt="Statistic Image"
+      width=""
+      height="">
+    <div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
       <div>
-        <h3 class="uppercase tracking-wide font-bold mt-0">Testing Methodology</h3>
-        <ul class="ml-0 pl-4">
+        <h3 class="uppercase tracking-wide font-bold my-0 text-2xl">Testing Methodology</h3>
+        <ul class="ml-0 pl-4 text-lg">
           <li>Double-blind protocol</li>
           <li>100+ participants</li>
           <li>Professional testing environment</li>
           <li>Independent verification</li>
         </ul>
       </div>
-      <div class="space-y-6 col-span-2">
-        <img
-          class="w-full h-auto rounded-xl"
-          src="{{ section.settings.statistic_image | image_url: width: 750 }}"
-          alt="Statistic Image"
-          width=""
-          height="">
-      </div>
+      <img
+        class="w-full h-auto"
+        src="https://cdn.shopify.com/s/files/1/0263/8974/1673/files/blind-test-badge.png?v=1758376872"
+        alt="blind test badges"
+        width=""
+        height="">
     </div>
   </div>
 </div>
