@@ -308,7 +308,7 @@
       ],
       "name": "Shop By",
       "settings": {
-        "background_color": "#fcfbf9",
+        "background_color": "#f1f6ff",
         "heading": "Shop By Bestsellers",
         "padding_top": 72,
         "padding_bottom": 72
@@ -471,7 +471,7 @@
       ],
       "name": "Makes Different",
       "settings": {
-        "background_color": "#ffffff",
+        "background_color": "#f1f6ff",
         "makes_diferent_title": "Luxury redefined",
         "makes_diferent_description": "CRAFTED WITH PRECISION",
         "makes-different-image": "shopify://shop_images/bottles.png",
