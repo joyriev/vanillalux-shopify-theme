@@ -27,8 +27,8 @@
         "image_aEwGgP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/dupe_store.svg",
-            "image_width": 120,
+            "image": "shopify://shop_images/dupestore-logo-white.png",
+            "image_width": 145,
             "alignment": ""
           }
         },
