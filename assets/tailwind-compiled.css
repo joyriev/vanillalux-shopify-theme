@@ -809,6 +809,10 @@
     max-width: 750px
 }
 
+.max-w-\[262px\] {
+    max-width: 262px
+}
+
 .flex-1 {
     flex: 1 1 0%
 }
