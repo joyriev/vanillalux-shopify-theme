@@ -159,7 +159,7 @@
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {%- if settings.logo != blank -%}
-          <div class="header__heading-logo-wrapper">
+          <div class="header__heading-logo-wrapper text-center">
             {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
             {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
             {% capture sizes %}(max-width: {{ settings.logo_width | times: 2 }}px) 50vw, {{ settings.logo_width }}px{% endcapture %}
@@ -176,6 +176,7 @@
                 sizes: sizes,
                 preload: true
             }}
+            <span class="h-0 w-0 overflow-hidden visibility-hidden">{{ page_title }}</span>
           </div>
         {%- else -%}
           <span class="h2">{{ shop.name }}</span>

@@ -677,6 +677,10 @@
     width: 100vw
 }
 
+.w-0 {
+    width: 0px
+}
+
 .min-w-\[1rem\] {
     min-width: 16px
 }
