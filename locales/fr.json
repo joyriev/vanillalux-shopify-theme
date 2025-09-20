@@ -568,6 +568,27 @@
             "sandbox_error": "Quelque chose n'a pas fonctionné",
             "web_component_error": "Il y a eu un problème de chargement de cette page"
           }
+        },
+        "usdc_cashback_title": "1% de remise en argent",
+        "usdc_cashback_additional_info": "Recevez 1 % en USDC directement dans votre portefeuille.",
+        "usdc_cashback_terms": "Conditions d'application",
+        "markets_pro_disclaimer_label_express_checkout": "En achetant, vous acceptez les %{markets_pro_terms} et %{privacy_policy} de Global-e, notre prestataire de services international",
+        "markets_pro_disclaimer_express_terms_and_conditions": "termes",
+        "markets_pro_disclaimer_express_privacy_policy": "politique de confidentialité"
+      },
+      "contact": {
+        "email_rollup_accessibility_label": "Options de courriel",
+        "phone_rollup_accessibility_label": "Options de téléphone"
+      },
+      "customer_account": {
+        "rollup_accessibility_label": "Options de Account"
+      },
+      "billing": {
+        "billing_address_rollup_accessibility_label": "Facture aux options"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Le paiement ne contient que des marchandises à distance. Une redirection vers la boutique à distance est nécessaire pour finaliser le paiement."
         }
       }
     }

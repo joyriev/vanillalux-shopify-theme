@@ -537,7 +537,13 @@
             "sandbox_error": "Etwas ist schief gelaufen",
             "web_component_error": "Es gab ein Problem beim Laden dieser Seite"
           }
-        }
+        },
+        "usdc_cashback_title": "1% Cashback",
+        "usdc_cashback_additional_info": "Erhalten Sie 1 % in USDC direkt in Ihrer Brieftasche zurück.",
+        "usdc_cashback_terms": "Bedingungen gelten",
+        "markets_pro_disclaimer_label_express_checkout": "Durch den Kauf stimmen Sie den %{markets_pro_terms} und %{privacy_policy} von Global-e, unserem internationalen Dienstleister, zu.",
+        "markets_pro_disclaimer_express_terms_and_conditions": "Begriffe",
+        "markets_pro_disclaimer_express_privacy_policy": "Datenschutzerklärung"
       },
       "shipping_errors": {
         "unavailable_addresses_only_countries": "Ihre Bestellung kann nur an {{countriesList}} versandt werden. Fügen Sie eine neue Adresse hinzu, um fortzufahren."
@@ -548,6 +554,21 @@
       },
       "merchant_instruction_errors": {
         "invalid_entrypoint_for_remote_negotiation": "Die Fernverhandlungsanweisung kann nicht an eine Nicht-Fernverhandlungssitzung übermittelt werden."
+      },
+      "contact": {
+        "email_rollup_accessibility_label": "E-Mail-Optionen",
+        "phone_rollup_accessibility_label": "Telefonoptionen"
+      },
+      "customer_account": {
+        "rollup_accessibility_label": "Kontooptionen"
+      },
+      "billing": {
+        "billing_address_rollup_accessibility_label": "Rechnung an Optionen"
+      },
+      "remote": {
+        "errors": {
+          "only_remote_merchandise_lines": "Der Checkout enthält nur entfernte Waren. Eine Weiterleitung zum entfernten Shop ist erforderlich, um den Checkout abzuschließen."
+        }
       }
     }
   },
@@ -576,6 +597,14 @@
       "expand_label": "Ankündigungsleiste erweitern",
       "collapse_label": "Ankündigungsleiste einklappen",
       "close_label": "Ankündigungsleiste schließen"
+    },
+    "payment_methods": {
+      "replacement_payment_method_title": "Ersatz-Zahlungsmethode",
+      "add_payment_method": {
+        "replace_mode_warning": "Das Löschen dieser Zahlungsmethode wirkt sich auf Abonnements oder Vorbestellungen aus. Ersetzen Sie sie durch eine alternative Zahlungsmethode, um weiterhin kommende Bestellungen zu erhalten.",
+        "choose_from_list": "Aus Liste wählen",
+        "add_new_button": "Neu hinzufügen"
+      }
     }
   }
 }
