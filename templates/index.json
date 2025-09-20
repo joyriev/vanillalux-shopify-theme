@@ -73,6 +73,7 @@
     },
     "homepage_hero_GDeBtq": {
       "type": "homepage-hero",
+      "disabled": true,
       "name": "Homepage Hero",
       "settings": {
         "background_color": "#121212",
@@ -614,8 +615,8 @@
   "order": [
     "insta_story",
     "homepage_hero_GDeBtq",
-    "marquee_labels_RLdqpN",
     "luxury_home_hero_NediHK",
+    "marquee_labels_RLdqpN",
     "magazine_reviews_AeDF9g",
     "homepage_products_tab_RwziwE",
     "feature_highlights_wfUacV",
