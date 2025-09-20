@@ -89,6 +89,23 @@
         "padding_bottom": 40
       }
     },
+    "luxury_home_hero_NediHK": {
+      "type": "luxury-home-hero",
+      "name": "Luxury Home Hero",
+      "settings": {
+        "background_color": "#000000",
+        "image": "shopify://shop_images/dupestore_header.png",
+        "review_text": "",
+        "title": "Luxury Redefined",
+        "subtitle": "Crafted with precision",
+        "button_text": "Shop now",
+        "button_link": "shopify://pages/build-your-bundle",
+        "secondary_button_text": "Not sure yet? Explore More →",
+        "secondary_button_link": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "marquee_labels_RLdqpN": {
       "type": "marquee-labels",
       "blocks": {
@@ -146,23 +163,6 @@
       ],
       "name": "Marquee Labels",
       "settings": {}
-    },
-    "luxury_home_hero_NediHK": {
-      "type": "luxury-home-hero",
-      "name": "Luxury Home Hero",
-      "settings": {
-        "background_color": "#000000",
-        "image": "shopify://shop_images/dupestore_header.png",
-        "review_text": "",
-        "title": "Luxury Redefined",
-        "subtitle": "Crafted with precision",
-        "button_text": "Shop now",
-        "button_link": "shopify://pages/build-your-bundle",
-        "secondary_button_text": "Not sure yet? Explore More →",
-        "secondary_button_link": "",
-        "padding_top": 72,
-        "padding_bottom": 72
-      }
     },
     "magazine_reviews_AeDF9g": {
       "type": "magazine-reviews",
