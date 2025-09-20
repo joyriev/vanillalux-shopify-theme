@@ -406,6 +406,10 @@
     margin-top: 44px
 }
 
+.mt-1 {
+    margin-top: 4px
+}
+
 .line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -763,6 +767,10 @@
 
 .max-w-\[300px\] {
     max-width: 300px
+}
+
+.max-w-\[320px\] {
+    max-width: 320px
 }
 
 .flex-1 {
@@ -1969,6 +1977,16 @@
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
 }
 
+.text-\[\#b47342\] {
+    --tw-text-opacity: 1;
+    color: rgb(180 115 66 / var(--tw-text-opacity, 1))
+}
+
+.text-\[\#dd9055\] {
+    --tw-text-opacity: 1;
+    color: rgb(221 144 85 / var(--tw-text-opacity, 1))
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -2098,6 +2116,18 @@
 
 .\[font-family\:var\(--font-body-family\)\] {
     font-family: var(--font-body-family)
+}
+
+.\[font-family\:var\(--font-family\)\] {
+    font-family: var(--font-family)
+}
+
+.\[font-family\:var\(--font-family-heading\)\] {
+    font-family: var(--font-family-heading)
+}
+
+.\[font-family\:var\(--font-heading-family\)\] {
+    font-family: var(--font-heading-family)
 }
 
 .\[grid-area\:search\] {
