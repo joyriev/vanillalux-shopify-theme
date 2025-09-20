@@ -235,7 +235,7 @@
       "custom_css": [],
       "settings": {
         "enable_sticky_info": true,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -252,6 +252,64 @@
     "pdp_bundle_builder": {
       "type": "pdp-bundle-builder",
       "disabled": true,
+      "settings": {}
+    },
+    "marquee_labels_KcXdz8": {
+      "type": "marquee-labels",
+      "blocks": {
+        "label_gqGThY": {
+          "type": "label",
+          "settings": {
+            "label": "FREE SHIPPING ON ALL ORDERS"
+          }
+        },
+        "label_EDWarR": {
+          "type": "label",
+          "settings": {
+            "label": "SAVE UPTO 50% OFF WITH OUR BUNDLES & GIFT SETS"
+          }
+        },
+        "label_AzCE7w": {
+          "type": "label",
+          "settings": {
+            "label": "100% AUTHENTIC"
+          }
+        },
+        "label_Hbb969": {
+          "type": "label",
+          "settings": {
+            "label": "EXPERT-CURATED COLLECTIONS"
+          }
+        },
+        "label_z9heQE": {
+          "type": "label",
+          "settings": {
+            "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
+          }
+        },
+        "label_hHi6Rr": {
+          "type": "label",
+          "settings": {
+            "label": "25% EDP"
+          }
+        },
+        "label_BK6L7d": {
+          "type": "label",
+          "settings": {
+            "label": "Only 50 Hand-Crafted at a Time"
+          }
+        }
+      },
+      "block_order": [
+        "label_gqGThY",
+        "label_EDWarR",
+        "label_AzCE7w",
+        "label_Hbb969",
+        "label_z9heQE",
+        "label_hHi6Rr",
+        "label_BK6L7d"
+      ],
+      "name": "Marquee Labels",
       "settings": {}
     },
     "stacks_up_xtpACd": {
@@ -324,64 +382,6 @@
         "padding_top": 32,
         "padding_bottom": 72
       }
-    },
-    "marquee_labels_KcXdz8": {
-      "type": "marquee-labels",
-      "blocks": {
-        "label_gqGThY": {
-          "type": "label",
-          "settings": {
-            "label": "FREE SHIPPING ON ALL ORDERS"
-          }
-        },
-        "label_EDWarR": {
-          "type": "label",
-          "settings": {
-            "label": "SAVE UPTO 50% OFF WITH OUR BUNDLES & GIFT SETS"
-          }
-        },
-        "label_AzCE7w": {
-          "type": "label",
-          "settings": {
-            "label": "100% AUTHENTIC"
-          }
-        },
-        "label_Hbb969": {
-          "type": "label",
-          "settings": {
-            "label": "EXPERT-CURATED COLLECTIONS"
-          }
-        },
-        "label_z9heQE": {
-          "type": "label",
-          "settings": {
-            "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
-          }
-        },
-        "label_hHi6Rr": {
-          "type": "label",
-          "settings": {
-            "label": "25% EDP"
-          }
-        },
-        "label_BK6L7d": {
-          "type": "label",
-          "settings": {
-            "label": "Only 50 Hand-Crafted at a Time"
-          }
-        }
-      },
-      "block_order": [
-        "label_gqGThY",
-        "label_EDWarR",
-        "label_AzCE7w",
-        "label_Hbb969",
-        "label_z9heQE",
-        "label_hHi6Rr",
-        "label_BK6L7d"
-      ],
-      "name": "Marquee Labels",
-      "settings": {}
     },
     "cupid-video-reviews": {
       "type": "cupid-video-reviews",
