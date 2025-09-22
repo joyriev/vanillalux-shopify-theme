@@ -292,6 +292,7 @@
     },
     "luxury_without_price_tag_25793G": {
       "type": "without-price-tag",
+      "disabled": true,
       "settings": {}
     },
     "shop_by_fHtnnB": {
