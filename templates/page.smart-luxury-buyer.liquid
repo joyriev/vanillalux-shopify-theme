@@ -1,0 +1,557 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Georgia'
+    , serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .urgency-bar {
+    background: #27ae60;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .hero {
+    background: white;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 3px solid #27ae60;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1a252f;
+    line-height: 1.2;
+  }
+
+  .hero .subheadline {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .insider-badge {
+    background: #27ae60;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+
+  .content-section {
+    background: white;
+    padding: 40px 0;
+    margin: 20px 0;
+  }
+
+  .content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a252f;
+    border-bottom: 2px solid #27ae60;
+    padding-bottom: 10px;
+  }
+
+  .content-section h3 {
+    font-size: 1.5rem;
+    margin: 30px 0 15px;
+    color: #2c3e50;
+  }
+
+  .content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .highlight {
+    background: #d5f4e6;
+    padding: 20px;
+    border-left: 4px solid #27ae60;
+    margin: 30px 0;
+    font-weight: bold;
+  }
+
+  .insider-info {
+    background: #ecf0f1;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    border: 2px solid #bdc3c7;
+  }
+
+  .testimonial {
+    background: #f8f9fa;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 4px solid #3498db;
+    font-style: italic;
+  }
+
+  .testimonial .author {
+    font-weight: bold;
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  .product-showcase {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+  }
+
+  .product-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .product-image {
+    width: 200px;
+    height: 200px;
+    background: #27ae60;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .cost-breakdown {
+    background: white;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .cost-row:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: #d5f4e6;
+    margin: 10px -15px -15px;
+    padding: 20px 15px;
+  }
+
+  .waste-amount {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+
+  .savings-amount {
+    color: #27ae60;
+    font-weight: bold;
+  }
+
+  .cta-section {
+    background: #27ae60;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+  }
+
+  .cta-button {
+    background: #1a252f;
+    color: white;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .guarantee {
+    background: #d5f4e6;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .guarantee h3 {
+    color: #27ae60;
+    margin-bottom: 15px;
+  }
+
+  .intelligence-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+  }
+
+  .intelligence-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+  }
+
+  .intelligence-card h4 {
+    color: #27ae60;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  .scarcity {
+    background: #d5f4e6;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero .subheadline {
+      font-size: 1.1rem;
+    }
+
+    .content-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .intelligence-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cost-row {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+<section class="hero">
+  <div class="container">
+    <div class="insider-badge">INSIDER INTELLIGENCE</div>
+    <h1>Why Billionaires' Personal Shoppers Are Secretly Buying These $20 'Dupes'</h1>
+    <p class="subheadline">Instead of $400 Designer Bottles (The Luxury Industry's Best-Kept Secret)</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <p>
+      <strong>Last month, I discovered something that shocked me about the luxury fragrance industry...</strong>
+    </p>
+
+    <p>A personal shopper for three billionaire clients let me in on a secret that the luxury industry desperately wants to keep hidden.</p>
+
+    <p>These ultra-wealthy individuals – people who could buy Creed and Tom Ford by the case – are instead having their assistants purchase $20 "inspired" fragrances that smell identical to the originals.</p>
+
+    <div class="highlight">
+      <p>"My clients didn't become billionaires by wasting money on marketing and packaging. They want the scent, not the story. When I can get them the exact same fragrance for 95% less, that's smart business." - Anonymous Personal Shopper, Manhattan</p>
+    </div>
+
+    <p>This revelation led me down a rabbit hole that exposed the biggest scam in the luxury industry – and the smartest investment you can make in your personal presence.</p>
+
+    <h2>The $400 Markup That's Making You Poorer</h2>
+
+    <p>Here's what every sophisticated man should know about luxury fragrances:</p>
+
+    <p>That $425 bottle of Creed Aventus costs approximately $12 to manufacture. The bergamot, the ambergris, the oakmoss – all of it. Twelve dollars.</p>
+
+    <p>The remaining $413 goes to:</p>
+
+    <div class="insider-info">
+      <h3>💰 Where Your $400 Really Goes:</h3>
+      <p>
+        <strong>Celebrity Endorsements:</strong>
+        $120 per bottle</p>
+      <p>
+        <strong>Luxury Packaging:</strong>
+        $85 per bottle</p>
+      <p>
+        <strong>Retail Markup:</strong>
+        $95 per bottle</p>
+      <p>
+        <strong>Marketing & Advertising:</strong>
+        $78 per bottle</p>
+      <p>
+        <strong>Brand "Prestige" Premium:</strong>
+        $35 per bottle</p>
+      <p>
+        <strong>Actual Fragrance:</strong>
+        $12 per bottle</p>
+    </div>
+
+    <p>You're not paying for luxury. You're paying for the illusion of luxury.</p>
+
+    <h3>The Intelligence Advantage</h3>
+
+    <p>Smart money doesn't pay for marketing. Smart money pays for results.</p>
+
+    <p>When you can get the exact same olfactory experience – the same bergamot from Calabria, the same ambergris accord, the same oakmoss from France – for $20, paying $400 isn't luxury. It's financial illiteracy.</p>
+
+    <div class="testimonial">
+      <p>"I've been collecting niche fragrances for 15 years. When my sommelier friend introduced me to TryScent, I was skeptical. But in blind tests, I literally cannot tell the difference. I've saved over $3,000 this year alone."</p>
+      <div class="author">– Richard H., Wine Collector & Fragrance Enthusiast</div>
+    </div>
+  </div>
+</section>
+
+<section class="product-showcase">
+  <div class="container">
+    <h2>The Intelligent Choice: Premium Fragrances at Honest Prices</h2>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-image">
+          TryScent<br>Pineapple Smoke Vanilla<br>(Aventus)
+        </div>
+        <h3>The Executive's Choice</h3>
+        <p>Powerful, sophisticated, commanding. The scent of success without the success tax.</p>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          TryScent<br>Bergamot Pepper Ambroxan<br>(Sauvage)
+        </div>
+        <h3>The Modern Classic</h3>
+        <p>Fresh, magnetic, universally appealing. Luxury-grade performance at intelligent pricing.</p>
+      </div>
+    </div>
+
+    <div class="cost-breakdown">
+      <h3 style="text-align: center; color: #1a252f; margin-bottom: 20px;">Smart Money vs. Wasted Money</h3>
+      <div class="cost-row">
+        <span>2 Designer Bottles (Aventus + Sauvage)</span>
+        <span class="waste-amount">$850</span>
+      </div>
+      <div class="cost-row">
+        <span>2 TryScent Bottles (Identical Scents)</span>
+        <span>$39.98</span>
+      </div>
+      <div class="cost-row">
+        <span>Your Intelligent Savings</span>
+        <span class="savings-amount">$810.02</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2>What Separates Smart Luxury from Stupid Luxury</h2>
+
+    <div class="intelligence-grid">
+      <div class="intelligence-card">
+        <h4>🧠 Smart Luxury</h4>
+        <p>Pays for quality, performance, and results. Invests in experiences, not packaging.</p>
+      </div>
+
+      <div class="intelligence-card">
+        <h4>💸 Stupid Luxury</h4>
+        <p>Pays for logos, marketing, and social signaling. Wastes money on markup.</p>
+      </div>
+
+      <div class="intelligence-card">
+        <h4>🎯 Smart Approach</h4>
+        <p>Gets identical quality for 90% less. Uses savings for investments that appreciate.</p>
+      </div>
+
+      <div class="intelligence-card">
+        <h4>🤡 Foolish Approach</h4>
+        <p>Pays premium for the same molecules. Funds celebrity endorsements and advertising.</p>
+      </div>
+    </div>
+
+    <h3>The Quality You Demand, The Price You Deserve</h3>
+
+    <p>TryScent doesn't compromise on quality. Here's what you get:</p>
+
+    <p>
+      <strong>19-21% Fragrance Concentration:</strong>
+      Higher than most designer fragrances. Lasts 12+ hours with excellent projection.</p>
+
+    <p>
+      <strong>Identical Molecular Structure:</strong>
+      Same bergamot, same ambroxan, same oakmoss. Molecule-for-molecule recreation of the originals.</p>
+
+    <p>
+      <strong>Blind Test Validation:</strong>
+      93% of participants cannot distinguish between TryScent and designer originals in controlled tests.</p>
+
+    <p>
+      <strong>No Compromise Formula:</strong>
+      We use the same raw materials as luxury houses. The only difference is we don't pay for celebrity endorsements.</p>
+
+    <div class="testimonial">
+      <p>"As a fragrance consultant for high-net-worth individuals, I've tested hundreds of alternatives. TryScent is the only brand I recommend to my clients. Same quality, intelligent pricing. It's what luxury should be."</p>
+      <div class="author">– Alexandra M., Luxury Fragrance Consultant</div>
+    </div>
+
+    <h2>The Investment That Pays Dividends</h2>
+
+    <p>When you choose TryScent, you're not just saving money. You're making an intelligent investment in your personal brand.</p>
+
+    <p>That $810 you save? Invest it in experiences, education, or assets that appreciate. Use it for a weekend in Napa, a masterclass in your field, or shares in a growing company.</p>
+
+    <p>Meanwhile, you'll smell exactly like the men who paid 20x more, but you'll have the satisfaction of knowing you made the smarter choice.</p>
+
+    <div class="insider-info">
+      <h3>🎓 The Intelligent Man's Fragrance Strategy:</h3>
+      <p>
+        <strong>Step 1:</strong>
+        Build a luxury fragrance wardrobe for under $100</p>
+      <p>
+        <strong>Step 2:</strong>
+        Invest the $2,000+ savings in appreciating assets</p>
+      <p>
+        <strong>Step 3:</strong>
+        Enjoy identical luxury at intelligent prices</p>
+      <p>
+        <strong>Step 4:</strong>
+        Never pay the "stupid tax" on marketing again</p>
+    </div>
+
+    <div class="scarcity">
+      ⚠️ EXCLUSIVE ACCESS: Limited to 500 intelligent buyers per month. Current availability: 67 sets remaining.
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Join The Intelligent Luxury Movement</h2>
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">Get luxury-grade fragrances at honest prices. Because smart men don't pay for marketing.</p>
+
+    <div style="background: white; padding: 30px; border-radius: 10px; margin: 30px 0; color: #333;">
+      <h3 style="color: #27ae60; margin-bottom: 20px;">INTELLIGENT BUYER SPECIAL - Buy 3 Get 1 FREE</h3>
+      <p style="font-size: 1.1rem; margin-bottom: 20px;">4 bottles of luxury-grade fragrance for just $59.97</p>
+      <p style="font-size: 0.9rem; color: #666;">Build your entire luxury fragrance collection for less than one designer bottle</p>
+    </div>
+
+    <a href="#order" class="cta-button">MAKE THE INTELLIGENT CHOICE</a>
+
+    <div class="guarantee">
+      <h3>60-Day Intelligence Guarantee</h3>
+      <p>If you can tell the difference between TryScent and the designer originals in a blind test, return them for a full refund. We're that confident in our quality.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <h2>The Choice That Defines You</h2>
+
+    <p>Every purchase is a statement about who you are and how you think.</p>
+
+    <p>When you buy a $400 bottle of cologne, you're saying: "I pay for marketing. I value perception over performance. I make financial decisions based on emotion, not intelligence."</p>
+
+    <p>When you choose TryScent, you're saying: "I'm too smart to pay the stupid tax. I value quality over branding. I make decisions based on results, not marketing."</p>
+
+    <p>Which statement represents who you are?</p>
+
+    <div class="testimonial">
+      <p>"I used to spend $2,000+ per year on designer fragrances. Now I spend $200 and get better performance. The money I save goes into my investment portfolio. That's the difference between looking wealthy and being wealthy."</p>
+      <div class="author">– Michael T., Portfolio Manager</div>
+    </div>
+
+    <h3>The Intelligent Man's Advantage</h3>
+
+    <p>While other men waste money on overpriced bottles, you'll have:</p>
+
+    <p>✓ A complete luxury fragrance wardrobe for under $100<br>
+      ✓ Identical scents to men who paid 20x more<br>
+      ✓ Extra capital to invest in appreciating assets<br>
+      ✓ The satisfaction of making intelligent choices<br>
+      ✓ Access to luxury without the luxury tax</p>
+
+    <p>This isn't about being cheap. It's about being smart.</p>
+
+    <div class="scarcity">
+      🔥 FINAL NOTICE: Only 67 intelligent buyer sets remaining this month
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Make The Intelligent Choice Today</h2>
+    <a href="#order" class="cta-button">JOIN THE SMART LUXURY MOVEMENT</a>
+    <p style="margin-top: 20px; font-size: 0.9rem;">✓ 60-Day Quality Guarantee ✓ Free Worldwide Shipping ✓ Intelligent Pricing</p>
+  </div>
+</section>
