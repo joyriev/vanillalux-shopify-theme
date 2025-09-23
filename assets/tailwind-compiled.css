@@ -1249,6 +1249,11 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-\[\#1a252f\] {
+    --tw-border-opacity: 1;
+    border-color: rgb(26 37 47 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1645,6 +1650,11 @@
     padding-bottom: 32px
 }
 
+.py-10 {
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -1901,7 +1911,7 @@
     letter-spacing: 0em
 }
 
-.tracking-tight {
+. {
     letter-spacing: -0.025em
 }
 
@@ -2675,6 +2685,16 @@
     .md\:py-20 {
         padding-top: 80px;
         padding-bottom: 80px
+    }
+
+    .md\:py-28 {
+        padding-top: 112px;
+        padding-bottom: 112px
+    }
+
+    .md\:py-14 {
+        padding-top: 56px;
+        padding-bottom: 56px
     }
 
     .md\:pb-12 {
