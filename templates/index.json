@@ -136,17 +136,19 @@
         "label_LMktzF": {
           "type": "label",
           "settings": {
-            "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
+            "label": "💯 60-DAY MONEY BACK (But you won't need it"
           }
         },
         "label_LqcxhV": {
           "type": "label",
+          "disabled": true,
           "settings": {
             "label": "25% EDP"
           }
         },
         "label_nnU3Xa": {
           "type": "label",
+          "disabled": true,
           "settings": {
             "label": "Only 50 Hand-Crafted at a Time"
           }
