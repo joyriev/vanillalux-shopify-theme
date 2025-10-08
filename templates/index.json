@@ -217,14 +217,14 @@
           "type": "collection",
           "settings": {
             "tab_title": "TikTok Famous",
-            "collection": "best-sellers"
+            "collection": "tiktok-famous"
           }
         },
         "collection_GH6VcB": {
           "type": "collection",
           "settings": {
             "tab_title": "The Classics",
-            "collection": "best-sellers"
+            "collection": "the-classics"
           }
         }
       },
