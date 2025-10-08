@@ -305,7 +305,7 @@
           "settings": {
             "image": "shopify://shop_images/model1.png",
             "heading": "Scents For Women",
-            "subheading": "\"From boardroom boss to night-out chaos. We've got your whole personality covered.",
+            "subheading": "From boardroom boss to night-out chaos. We've got your whole personality covered.",
             "button_text": "Explore",
             "button_link": "shopify://collections/woman",
             "collection": "woman"
@@ -316,7 +316,7 @@
           "settings": {
             "image": "shopify://shop_images/model2.png",
             "heading": "Scents For Men",
-            "subheading": "100+ scents to choose from",
+            "subheading": "Whether you're closing deals or breaking hearts, smell like you mean business.",
             "button_text": "Explore",
             "button_link": "shopify://collections/man",
             "collection": "man"
