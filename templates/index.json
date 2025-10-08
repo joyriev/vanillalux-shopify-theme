@@ -445,40 +445,40 @@
         "list_item_LLAAfL": {
           "type": "list_item",
           "settings": {
-            "title": "Inspired by Luxury Icons",
-            "description": "without the inflated price tags",
+            "title": "No Celebrity Tax",
+            "description": "You're not paying for a famous face. You're paying for the actual scent. Revolutionary concept, we know.",
             "image": "shopify://shop_images/crown-icon.svg"
           }
         },
         "list_item_Y8PNCx": {
           "type": "list_item",
           "settings": {
-            "title": "Clean, Cruelty-Free Formulas",
-            "description": "for peace of mind",
+            "title": "Cruelty-Free (Obviously)",
+            "description": "We test on willing humans, not bunnies. Because we're not monsters.",
             "image": "shopify://shop_images/leaf-icon.svg"
           }
         },
         "list_item_yxDVcQ": {
           "type": "list_item",
           "settings": {
-            "title": "Smells That Last All Day",
-            "description": "no top note vanishing act",
+            "title": "12+ Hour Longevity",
+            "description": "Your scent should last as long as your day. No reapplying every two hours like some amateur.",
             "image": "shopify://shop_images/clock-icon.svg"
           }
         },
         "list_item_htAiEB": {
           "type": "list_item",
           "settings": {
-            "title": "Mini Sizes to Test First",
-            "description": "before you commit to full bottles",
+            "title": " Try Before You Commit",
+            "description": "Travel sizes exist for a reason. Test drive before you buy the full bottle. Smart shopping 101.",
             "image": "shopify://shop_images/aerosol-spray-bottle-icon.svg"
           }
         },
         "list_item_bhN48G": {
           "type": "list_item",
           "settings": {
-            "title": "Free Returns Within 60 Days",
-            "description": "just in case it’s not love at first spritz",
+            "title": "60-Day Money Back",
+            "description": "If you don't love it, we'll refund you. No questions, no hassle. (But you're gonna love it.)",
             "image": "shopify://shop_images/undo-arrow-icon.svg"
           }
         }
