@@ -446,7 +446,7 @@
           "type": "list_item",
           "settings": {
             "title": "No Celebrity Tax",
-            "description": "You're not paying for a famous face. You're paying for the actual scent. Revolutionary concept, we know.",
+            "description": "You're not paying for a famous face.",
             "image": "shopify://shop_images/crown-icon.svg"
           }
         },
@@ -454,7 +454,7 @@
           "type": "list_item",
           "settings": {
             "title": "Cruelty-Free (Obviously)",
-            "description": "We test on willing humans, not bunnies. Because we're not monsters.",
+            "description": "We test on willing humans, not bunnies.",
             "image": "shopify://shop_images/leaf-icon.svg"
           }
         },
@@ -462,7 +462,7 @@
           "type": "list_item",
           "settings": {
             "title": "12+ Hour Longevity",
-            "description": "Your scent should last as long as your day. No reapplying every two hours like some amateur.",
+            "description": "Your scent should last as long as your day.",
             "image": "shopify://shop_images/clock-icon.svg"
           }
         },
@@ -470,7 +470,7 @@
           "type": "list_item",
           "settings": {
             "title": " Try Before You Commit",
-            "description": "Travel sizes exist for a reason. Test drive before you buy the full bottle. Smart shopping 101.",
+            "description": "Travel sizes exist for a reason.",
             "image": "shopify://shop_images/aerosol-spray-bottle-icon.svg"
           }
         },
@@ -478,7 +478,7 @@
           "type": "list_item",
           "settings": {
             "title": "60-Day Money Back",
-            "description": "If you don't love it, we'll refund you. No questions, no hassle. (But you're gonna love it.)",
+            "description": "If you don't love it, we'll refund you.",
             "image": "shopify://shop_images/undo-arrow-icon.svg"
           }
         }
