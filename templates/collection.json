@@ -16,7 +16,6 @@
           "type": "story",
           "settings": {
             "title": "LV",
-            "image": "shopify://shop_images/new-arribals.png",
             "link": "shopify://collections/louis-vuitton®"
           }
         },
@@ -24,7 +23,6 @@
           "type": "story",
           "settings": {
             "title": "Dior",
-            "image": "shopify://shop_images/dior.avif",
             "link": "shopify://collections/dior®"
           }
         },
@@ -32,7 +30,6 @@
           "type": "story",
           "settings": {
             "title": "Tom Ford",
-            "image": "shopify://shop_images/Tom_ford.avif",
             "link": "shopify://collections/tomford®"
           }
         },
@@ -40,7 +37,6 @@
           "type": "story",
           "settings": {
             "title": "Baccarat",
-            "image": "shopify://shop_images/Baccarat_Rouge.png",
             "link": "shopify://collections/baccarat-rouge®"
           }
         },
@@ -48,7 +44,7 @@
           "type": "story",
           "settings": {
             "title": "Creed",
-            "image": "shopify://shop_images/Creed.png",
+            "image": "shopify://shop_images/creed.png",
             "link": "shopify://collections/creed®"
           }
         },
@@ -57,7 +53,6 @@
           "disabled": true,
           "settings": {
             "title": "Xerjoff",
-            "image": "shopify://shop_images/xerjoff.avif",
             "link": ""
           }
         }
@@ -81,6 +76,30 @@
         "color_scheme": "scheme-2"
       }
     },
+    "rich_text_fnCgkL": {
+      "type": "rich-text",
+      "blocks": {
+        "text_x4GrCN": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p>{{ collection.description }}"
+          }
+        }
+      },
+      "block_order": [
+        "text_x4GrCN"
+      ],
+      "custom_css": [],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
@@ -100,38 +119,12 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "rich_text_fnCgkL": {
-      "type": "rich-text",
-      "blocks": {
-        "text_x4GrCN": {
-          "type": "text",
-          "settings": {
-            "text": "<p></p>{{ collection.description }}"
-          }
-        }
-      },
-      "block_order": [
-        "text_x4GrCN"
-      ],
-      "custom_css": [
-        ".rich-text--full-width {background-color: #fcfbf9; border-top: #f3f3f3 2px solid;}"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
     "insta_story_6kD6Ki",
     "banner",
-    "product-grid",
-    "rich_text_fnCgkL"
+    "rich_text_fnCgkL",
+    "product-grid"
   ]
 }
