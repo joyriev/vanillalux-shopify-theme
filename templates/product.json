@@ -554,8 +554,29 @@
     },
     "review_section_top_NPxmhB": {
       "type": "review-section-top",
+      "disabled": true,
       "name": "Review Section Top",
       "settings": {}
+    },
+    "1760172070186777df": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_7wcUbg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_7wcUbg"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     },
     "cupid-images-slider": {
       "type": "cupid-images-slider",
@@ -755,26 +776,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "1760172070186777df": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_7wcUbg": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "real_data",
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_7wcUbg"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -789,6 +790,7 @@
     "tryscent_statistics_3GrMac",
     "satisfaction_JKqcnA",
     "review_section_top_NPxmhB",
+    "1760172070186777df",
     "cupid-images-slider",
     "1755117642437d279b",
     "1751863713a9594609",
@@ -796,7 +798,6 @@
     "faq-section",
     "tryscent_guarantee_8hATfM",
     "floating-atc",
-    "1760172070186777df",
     "image_with_text_hmaWn4"
   ]
 }
