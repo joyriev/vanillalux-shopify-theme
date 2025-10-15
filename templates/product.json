@@ -463,7 +463,7 @@
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
         "padding_top": 72,
         "padding_bottom": 72
       }
