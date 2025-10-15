@@ -11,17 +11,17 @@
   <div class="text-center pb-8 md:pb-12 border-0 border-b border-solid border-gray-200">
     <h1 class="font-bold text-4xl md:text-6xl my-0 leading-snug">Designer Scents For 90% Less.</h1>
     <p class="text-xl md:text-3xl font-medium text-gray-600">Same ingredients. Same longevity. <br class="md:hidden"> Zero markup.</p>
-    <div class="flex items-center gap-2 justify-center">
-      <div class="rating">
-        <img
-          class="h-6 md:h-10 w-auto"
-          src="//tryscent.co/cdn/shop/t/56/assets/rating-stars.svg?v=134568026622208682831756094205"
-          alt="*****"
-          height=""
-          width="">
-      </div>
-      <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
-    </div>
+  {% comment %} <div class="flex items-center gap-2 justify-center">
+              <div class="rating">
+                <img
+                  class="h-6 md:h-10 w-auto"
+                  src="//tryscent.co/cdn/shop/t/56/assets/rating-stars.svg?v=134568026622208682831756094205"
+                  alt="*****"
+                  height=""
+                  width="">
+              </div>
+              <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
+        </div> {% endcomment %}
   </div>
   {% comment %} X-Application Starts {% endcomment %}
   <div x-data>
@@ -152,14 +152,14 @@
                 </div>
                 <div class="relative flex-1">
                   <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
-                  <div class="flex items-center">
-                    <img
-                      src="{{ 'rating-stars.svg' | asset_url }}"
-                      alt="*****"
-                      height="13"
-                      width="66">
-                    <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
-                  </div>
+                  {% comment %} <div class="flex items-center">
+                                        <img
+                                          src="{{ 'rating-stars.svg' | asset_url }}"
+                                          alt="*****"
+                                          height="13"
+                                          width="66">
+                                        <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                                    </div> {% endcomment %}
                   <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
                 </div>
                 <button
