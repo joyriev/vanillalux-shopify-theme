@@ -501,6 +501,7 @@
         "stat_ym9zVf",
         "stat_YMCTgd"
       ],
+      "disabled": true,
       "name": "TryScent Statistics",
       "settings": {
         "background_color": "#f1f6ff",
