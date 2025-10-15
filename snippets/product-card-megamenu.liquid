@@ -27,10 +27,6 @@
         <span class="starts_at_text">Starts at</span>
       {% endunless %}
       {{ product.price | money }}
-      {% if product.tags contains 'onsale' %}
-        <span class="line-through text-[#c8202f] font-normal">
-          {{ cart.currency.symbol }}{{ product.compare_at_price | money_without_currency }}</span>
-      {% endif %}
     </div>
   </div>
 </a>
