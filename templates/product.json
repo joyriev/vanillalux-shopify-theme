@@ -392,6 +392,7 @@
     },
     "cupid-video-reviews": {
       "type": "cupid-video-reviews",
+      "disabled": true,
       "settings": {
         "padding_top": 72,
         "padding_bottom": 72,
@@ -419,6 +420,7 @@
         },
         "perk_dBbEYA": {
           "type": "perk",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/heart.svg",
             "text": "loved by 10,000+"
