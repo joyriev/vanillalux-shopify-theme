@@ -433,7 +433,7 @@
           "type": "perk",
           "settings": {
             "icon": "shopify://shop_images/sheild-star.svg",
-            "text": "60 day satisfaction guarantee"
+            "text": "60-Day Satisfaction Guarantee"
           }
         }
       },
@@ -573,9 +573,9 @@
           "disabled": true,
           "settings": {
             "review_data": "real_data",
+            "max_width": 1200,
             "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
+            "empty_state": "empty_widget"
           }
         }
       },
