@@ -522,14 +522,14 @@
           "type": "step",
           "settings": {
             "step_title": "Step 01",
-            "step_description": "Order your Dupestore"
+            "step_description": "Order your favorite Dupestore scent."
           }
         },
         "step_icybe6": {
           "type": "step",
           "settings": {
             "step_title": "Step 02",
-            "step_description": "Receive in 10-14 days and assemble in as little as 3 minutes."
+            "step_description": "Try it for up to 60 days, completely risk-free."
           }
         },
         "step_pQ6dMt": {
@@ -543,7 +543,7 @@
           "type": "step",
           "settings": {
             "step_title": "Step 04",
-            "step_description": "Don’t feel the vibe? simply reach out to us for a refund without questions or hassles."
+            "step_description": "Changed your mind? Contact us anytime for a quick, easy refund."
           }
         }
       },
