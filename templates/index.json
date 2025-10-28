@@ -420,7 +420,7 @@
           "type": "perk",
           "settings": {
             "icon": "shopify://shop_images/sheild-star.svg",
-            "text": "60 day satisfaction guarantee"
+            "text": "60 Day Satisfaction Guarantee"
           }
         }
       },
@@ -437,7 +437,7 @@
         "offer_title": "Commitment Issues? We Get It.",
         "offer_description": "Not ready to go all-in? Our travel-size bottles let you test-drive luxury scents without the luxury price tag.",
         "offer_sub_description": "",
-        "offer_button_text": "TRY BEFORE YOU FLY (BUY 2, GET 1 FREE",
+        "offer_button_text": "TRY BEFORE YOU FLY (BUY 2, GET 1 FREE)",
         "offer_button_link": "https://dupestore.com/pages/build-your-bundle",
         "padding_top": 72,
         "padding_bottom": 72
