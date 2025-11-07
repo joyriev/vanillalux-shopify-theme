@@ -1382,6 +1382,11 @@
     background-color: rgb(235 244 239 / var(--tw-bg-opacity, 1))
 }
 
+.bg-\[\#97592b\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(151 89 43 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -2329,6 +2334,15 @@
 .hover\:bg-warmAmber:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(180 115 66 / var(--tw-bg-opacity, 1))
+}
+
+.hover\:bg-warmAmber\/80:hover {
+    background-color: rgb(180 115 66 / 0.8)
+}
+
+.hover\:bg-\[\#a26333\]:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(162 99 51 / var(--tw-bg-opacity, 1))
 }
 
 .hover\:text-midnight:hover {
