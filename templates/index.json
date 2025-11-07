@@ -72,22 +72,12 @@
       "disabled": true,
       "settings": {}
     },
-    "homepage_hero_GDeBtq": {
-      "type": "homepage-hero",
+    "home_hero_banner_UmwRaW": {
+      "type": "home-hero-banner",
       "disabled": true,
-      "name": "Homepage Hero",
+      "name": "Home Hero Banner",
       "settings": {
-        "background_color": "#121212",
-        "image": "shopify://shop_images/dupestore_header.png",
-        "review_text": "LOVED BY 10,000 CUSTOMERS",
-        "title": "STOP Paying $300 for What Costs $30 to Make",
-        "subtitle": "Designer brands are laughing all the way to the bank while you pay 1000% markup for the same fragrance. Get Tom Ford, Creed, Dior, and Chanel quality for 90% less. Same scent, same compliments, same confidence - without the designer robbery.",
-        "button_text": "GET DESIGNER SCENTS FOR $25",
-        "button_link": "shopify://collections/woman",
-        "secondary_button_text": "Not sure yet? Explore More →",
-        "secondary_button_link": "https://dupestore.com/pages/build-your-bundle",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "link": ""
       }
     },
     "luxury_home_hero_NediHK": {
@@ -622,7 +612,7 @@
   },
   "order": [
     "insta_story",
-    "homepage_hero_GDeBtq",
+    "home_hero_banner_UmwRaW",
     "luxury_home_hero_NediHK",
     "marquee_labels_RLdqpN",
     "magazine_reviews_AeDF9g",
