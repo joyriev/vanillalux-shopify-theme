@@ -1,31 +1,44 @@
 {% assign item_count = cart.item_count %}
+{% assign total_price = cart.total_price %}
+
 {% if item_count > 0 %}
-  <div
-    class="pb-4"
-    data-item-count="{{ item_count }}"
-    data-currency-symbol="{{ cart.currency.symbol }}">
-    <!-- Milestone messages -->
-    <div class="text-base font-semibold text-center mb-6" id="milestone-message"></div>
-    <div class="relative h-3 bg-gray-200 rounded-full mb-4">
-      <div
-        class="absolute top-0 left-0 h-full bg-skyblue !block rounded-full"
-        style="width: 0%;"
-        id="progress-bar"></div>
-
-      <!-- 2+1 Free Bottle Pill -->
-      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[40%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-1">
-        <span class="text-xs font-bold">2+1</span>
+  <div class="bg-white px-8 pt-3 pb-2 rounded-full [display:grid] gap-6 grid-cols-10 mb-6">
+    <div class="col-span-4">
+      <div class="[display:grid] grid-cols-2 gap-1 mb-2">
+        <div class="h-2 w-full rounded-full !block bg-warmAmber"></div>
+        {% if item_count >= 2 %}
+          <div class="h-2 w-full rounded-full !block bg-warmAmber"></div>
+        {% else %}
+          <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
+        {% endif %}
       </div>
-
-      <!-- 3+2 Free Bottles Pill -->
-      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[70%] [transform:translateX(-50%)] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="bottle-pill-2">
-        <span class="text-xs font-bold">3+2</span>
+      <p class="my-0 text-xs text-center">
+        2 items 50% OFF</p>
+    </div>
+    <div class="col-span-3">
+      <div class="h-2 w-full rounded-full !block mb-2 relative {% if total_price >= 5000 %}bg-warmAmber {% else %}bg-gray-300{% endif %}">
+        <img
+          class="absolute -top-1.5 left-[40%] transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl"
+          src="{{ 'free-shipping.svg' | asset_url }}"
+          alt="Free"
+          width="30"
+          height="20">
       </div>
-
-      <!-- Free Shipping Pill -->
-      <div class="absolute size-10 flex items-center justify-center top-[-15px] left-[90%] bg-white border-2 border-solid border-gray-200 rounded-full text-xs" id="shipping-pill">
-        <span class="text-xs leading-none font-bold text-center">Free Ship</span>
+      <p class="my-0 text-xs text-center">
+        $50+ Free Shipping
+      </p>
+    </div>
+    <div class="col-span-3">
+      <div class="h-2 w-full rounded-full !block bg-warmAmber mb-2">
+        {% if item_count >= 3 %}
+          <div class="h-2 w-full rounded-full !block bg-warmAmber"></div>
+        {% else %}
+          <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
+        {% endif %}
       </div>
+      <p class="my-0 text-xs text-center">
+        3 items 66% OFF
+      </p>
     </div>
   </div>
 {% endif %}
