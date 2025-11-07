@@ -428,6 +428,10 @@
     display: inline-block
 }
 
+.\!inline-block {
+    display: inline-block !important
+}
+
 .inline {
     display: inline
 }
@@ -597,6 +601,10 @@
     height: 100vh
 }
 
+.h-\[8px\] {
+    height: 8px
+}
+
 .\!w-10 {
     width: 40px !important
 }
@@ -667,6 +675,10 @@
 
 .w-screen {
     width: 100vw
+}
+
+.w-\[8px\] {
+    width: 8px
 }
 
 .min-w-\[1rem\] {
@@ -910,6 +922,10 @@
 
 .gap-8 {
     gap: 32px
+}
+
+.gap-\[5px\] {
+    gap: 5px
 }
 
 .gap-x-2 {
@@ -1361,6 +1377,11 @@
     background-color: rgb(255 255 255 / 0.2)
 }
 
+.bg-\[\#EBF4EF\] {
+    --tw-bg-opacity: 1;
+    background-color: rgb(235 244 239 / var(--tw-bg-opacity, 1))
+}
+
 .bg-opacity-50 {
     --tw-bg-opacity: 0.5
 }
@@ -1658,6 +1679,10 @@
     padding-top: 32px
 }
 
+.pb-3 {
+    padding-bottom: 12px
+}
+
 .text-left {
     text-align: left
 }
@@ -1727,6 +1752,14 @@
     line-height: 16px
 }
 
+.text-\[22px\] {
+    font-size: 22px
+}
+
+.text-\[28px\] {
+    font-size: 28px
+}
+
 .\!font-black {
     font-weight: 900 !important
 }
@@ -1794,6 +1827,18 @@
 
 .leading-tight {
     line-height: 1.25
+}
+
+.leading-4 {
+    line-height: 16px
+}
+
+.leading-\[normal\] {
+    line-height: normal
+}
+
+.leading-normal {
+    line-height: 1.5
 }
 
 .\!tracking-normal {
@@ -1941,6 +1986,11 @@
 .text-yellow-500 {
     --tw-text-opacity: 1;
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
+}
+
+.text-\[\#226139\] {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 57 / var(--tw-text-opacity, 1))
 }
 
 .line-through {
@@ -2390,6 +2440,11 @@
         grid-column: span 5 / span 5
     }
 
+    .md\:mx-0 {
+        margin-left: 0px;
+        margin-right: 0px
+    }
+
     .md\:mt-14 {
         margin-top: 56px
     }
@@ -2505,6 +2560,10 @@
         --tw-space-y-reverse: 0;
         margin-top: calc(24px * calc(1 - var(--tw-space-y-reverse)));
         margin-bottom: calc(24px * var(--tw-space-y-reverse))
+    }
+
+    .md\:rounded-lg {
+        border-radius: 8px
     }
 
     .md\:bg-\[center_75\%\] {
@@ -2741,6 +2800,11 @@
 .\[\&\>\.swiper-slide-thumb-active\]\:border-\[\#222e4f\]>.swiper-slide-thumb-active {
     --tw-border-opacity: 1;
     border-color: rgb(34 46 79 / var(--tw-border-opacity, 1))
+}
+
+.\[\&\>\.swiper-slide-thumb-active\]\:border-\[\#226139\]>.swiper-slide-thumb-active {
+    --tw-border-opacity: 1;
+    border-color: rgb(34 97 57 / var(--tw-border-opacity, 1))
 }
 
 .\[\&\>\.swiper-slide-thumb-active\]\:opacity-100>.swiper-slide-thumb-active {
