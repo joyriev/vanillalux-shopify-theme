@@ -21,16 +21,15 @@
           "disabled": true,
           "settings": {}
         },
-        "selling_points_9tdid6": {
-          "type": "selling_points",
-          "settings": {}
-        },
         "cheaper_than_yDGYG9": {
           "type": "cheaper_than",
-          "disabled": true,
           "settings": {
             "number": 250
           }
+        },
+        "selling_points_9tdid6": {
+          "type": "selling_points",
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -219,8 +218,8 @@
       "block_order": [
         "title",
         "judge_me_reviews_preview_badge_kbXtkh",
-        "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
+        "selling_points_9tdid6",
         "variant_picker",
         "price",
         "quantity_selector",
