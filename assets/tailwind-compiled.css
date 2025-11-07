@@ -2566,6 +2566,10 @@
         border-radius: 8px
     }
 
+    .md\:rounded-2xl {
+        border-radius: 16px
+    }
+
     .md\:bg-\[center_75\%\] {
         background-position: center 75%
     }
