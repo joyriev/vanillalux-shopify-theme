@@ -27,7 +27,7 @@
 
   {%- style -%}
     .section-{{ section.id }}-padding {
-      padding-top: 0px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
@@ -75,7 +75,7 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div style="display: flex;" class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper pb-6">
+      <div class="grid__item product__media-wrapper pb-6 [display:none] md:block">
         {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -93,14 +93,17 @@
                 <div class="line-clamp-1 relative !-my-2">
                   <span class="italic tracking-tighter">Inspired by</span> <a href="/search?q={{ product.metafields.custom.forgaylawyers | url_encode }}" class="font-semibold text-lg not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ product.metafields.custom.forgaylawyers }}</a>
                 </div>
-              {% when 'cheaper_than' %}
+              {% when 'inspiration' %}
                 <div>
-                  {% if product.metafields.custom.nuta  != blank %}
-                    {% assign nuta_list = product.metafields.custom.nuta | split: "," %}
-                    <div class="text-black"><span class="italic">Inspired by: </span> <span class="font-semibold">{{ nuta_list[0] }}</span> <span>{{ nuta_list[1] }}</span></div>
-                  {% endif %}
+                  <div class="flex items-center gap-2 mb-3">
+                    <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
+                    <div>
+                      <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+                      <p class="text-sm my-0">Inspiration</p>
+                    </div>
+                  </div>
                   {% if product.metafields.custom.original_retail_price != blank %}
-                    <div>(Retail Price {{ product.metafields.custom.original_retail_price.value | money }})</div>
+                    <div class="text-sm">(Retail Price {{ product.metafields.custom.original_retail_price.value |  money }})</div>
                   {% endif %}
                   {% if product.metafields.custom.scent_intensity != blank %}
                     <div class="flex items-center gap-[5px]">
@@ -114,36 +117,35 @@
                   </div>
                   {% endif %}
                 </div>
+              {% when 'cheaper_than' %}
+                {% if product.metafields.custom.nuta  != blank %}
+                  <div class="flex items-center gap-1 font-semibold text-black">
+                    <span class="cheaper_than_text">"...{{ product.metafields.custom.nuta | remove: 'Inspired By: ' | remove: 'Inspired by: ' }}..."</span> 
+                  </div>
+                {% endif %}
                 {% if product.metafields.custom.bundle_product_content != blank %}
                   <div class="flex items-center gap-1 font-normal text-black leading-[normal]">
                     <span class="cheaper_than_text" style="font-size: 14px; line-height: normal;">{{ product.metafields.custom.bundle_product_content }}</span> 
                   </div>
                 {% endif %}
-                {% if product.tags contains 'Bundle_Price_Show' %}
-                  <div id="price-{{ section.id }}" class="bundle-price-pdp pb-3" role="status" {{ block.shopify_attributes }}>
-                    {% if product.compare_at_price > product.price %}
-                      {% assign discount = product.compare_at_price | minus: product.price %}
-                      {% assign discount_percent = discount | times: 100 | divided_by: product.compare_at_price | round %}
-                    {% endif %}
-
-                    <div class="flex items-center gap-3 text-2xl">
-                      {% if product.compare_at_price > product.price %}
-                        <span class="text-red-600 font-bold text-[28px] discount-percent">
-                          -{{ discount_percent }}%
-                        </span>
-                      {% endif %}
-
-                      <span class="text-black font-bold text-[28px] product-price">
-                        {{ product.price | money }}
-                      </span>
-
-                      {% if product.compare_at_price > product.price %}
-                        <span class="text-gray-500 font-semibold line-through text-[22px] compare-price">
-                         RRP: {{ product.compare_at_price | money }}
-                        </span>
-                      {% endif %}
-                    </div>
-                    <div class="text-lg font-semibold text-black leading-normal">
+                {% if product.tags contains 'Special_Offer' %}
+                  <div style="
+                    display: inline-block;
+                    background-color: #f44336;
+                    color: white;
+                    padding: 0px 12px;
+                    font-weight: bold;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase; 
+                  ">
+                    Special Offer
+                  </div>
+                {% endif %}
+                {% if product.metafields.custom.choose_your_fragrances_options != blank %}
+                  <div class="product-info__text">
+                    <div class="text-sm font-semibold text-black leading-normal" style="font-size:20px;">
                       Works out at just {{ product.price | divided_by: product.metafields.custom.choose_your_fragrances_options | money }}/bottle
                     </div>
                   </div>
@@ -157,14 +159,6 @@
                 <div class="reactive-variant-selector">
                   {% render 'reactive-variant-selector', product: product %}
                 </div>
-              {%- when 'atc_bundle_builder' -%}
-                <div class="atc-bundle-builder" {{ block.shopify_attributes }}>
-                  {% if product.metafields.custom.choose_your_fragrances_options != blank %}
-                    {% render 'special-offer-builder', product: product %}
-                  {% else %}
-                    {% render 'reactive-variant-selector', product: product %}
-                  {% endif %}
-                </div>
               {%- when 'shipping_text' -%}
                 <div class="!my-6">
                   <p class="my-0 text-center font-semibold tracking-normal">
@@ -175,13 +169,14 @@
                   </p>
                 </div>
               {%- when 'selling_points' -%}
-                <ul class="list-none p-0">
+                <ul class="list-none px-0 py-6 border-0 border-y border-gray-200 border-solid">
                   {% for item in product.metafields.custom.selling_points.value %}
                     <li class="flex gap-2 items-center text-gray-950 mb-4 leading-[1.2]">
-                      <img src="{{ 'tryscent-bottle.svg' | asset_url }}" alt="" height="24" width="24">
+                      ✅
                       {{ item }}
                     </li>
                   {% endfor %}
+                  <li class="font-semibold text-gray-950">Designer-level scents. Without the designer markup.</li>
                 </ul>
               {%- when 'money_back' -%}
                 <div class="flex items-center gap-3 bg-[#f0f2ec] p-6 rounded">
@@ -256,13 +251,12 @@
                       {% endif %}
                     </div>
                   {%- endif -%}  
-                  <h1 class="font-[700] leading-tight capitalize !tracking-normal flex flex-col pt-8">
+                  <h1 class="font-[700]  capitalize !tracking-normal flex flex-col pt-8">
                       {{ product.title }}
                   </h1>
                 </div>
-
               {%- when 'price' -%}
-                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                <div data-la-dn-price id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
                     product: product,
                     use_variant: true,
@@ -297,6 +291,7 @@
                     {{ form | payment_terms }}
                   {%- endform -%}
                 </div>
+                <div la-dn-product-banner></div>
               {%- when 'inventory' -%}
                 <p
                   class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.inventory_management != 'shopify' %} visibility-hidden{% endif %}"
@@ -886,6 +881,8 @@
     </script>
   </div>
 </product-info>
+
+{% comment %} {% render 'atc-builder-products-modal' %} {% endcomment %}
   
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -935,6 +932,11 @@
       "limit": 1
     },
     {
+      "type": "inspiration",
+      "name": "Inspiration",
+      "limit": 1
+    },
+    {
       "type": "cheaper_than",
       "name": "Cheaper than",
       "limit": 1,
@@ -955,11 +957,6 @@
     {
       "type": "reactive_variant_selector",
       "name": "Reactive Variant Selector",
-      "limit": 1
-    },
-    {
-      "type": "atc_bundle_builder",
-      "name": "Atc Bundle Builder",
       "limit": 1
     },
     {
