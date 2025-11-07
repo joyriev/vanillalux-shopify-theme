@@ -725,10 +725,6 @@
     max-width: 450px
 }
 
-.max-w-\[600px\] {
-    max-width: 600px
-}
-
 .max-w-\[700px\] {
     max-width: 700px
 }
@@ -751,10 +747,6 @@
 
 .max-w-screen-sm {
     max-width: 640px
-}
-
-.max-w-\[500px\] {
-    max-width: 500px
 }
 
 .flex-1 {
@@ -1855,11 +1847,6 @@
 .text-\[\#888888\] {
     --tw-text-opacity: 1;
     color: rgb(136 136 136 / var(--tw-text-opacity, 1))
-}
-
-.text-\[\#c8202f\] {
-    --tw-text-opacity: 1;
-    color: rgb(200 32 47 / var(--tw-text-opacity, 1))
 }
 
 .text-\[\#c8a559\] {
