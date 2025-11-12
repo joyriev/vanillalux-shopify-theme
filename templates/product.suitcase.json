@@ -386,6 +386,7 @@
         "product_xX66RW",
         "product_rbFra6"
       ],
+      "disabled": true,
       "name": "Stacks Up",
       "settings": {
         "background_color": "#f1f6ff",
@@ -407,6 +408,7 @@
     },
     "scent_breakdown_rG4H3T": {
       "type": "scent-breakdown",
+      "disabled": true,
       "name": "Scent Breakdown",
       "settings": {
         "background_color": "#ffffff",
@@ -445,6 +447,7 @@
         "perk_dBbEYA",
         "perk_8Q6daz"
       ],
+      "disabled": true,
       "name": "Special Offer",
       "settings": {
         "background_image": "shopify://shop_images/special-offer-two-bg.png",
